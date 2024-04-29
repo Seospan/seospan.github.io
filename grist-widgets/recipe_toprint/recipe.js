@@ -1,7 +1,9 @@
 function ready(fn) {
     if (document.readyState !== 'loading'){
+      console.log("DOC NOT READY")
       fn();
     } else {
+        console.log("DOC READY")
       document.addEventListener('DOMContentLoaded', fn);
     }
 }
@@ -25,6 +27,7 @@ function handleError(err) {
 }
 
 function updateRecipe(row, mappings){
+    console.log("TEST");
 
     try {
         data.status = '';
