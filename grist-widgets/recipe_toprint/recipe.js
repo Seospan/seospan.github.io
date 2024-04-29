@@ -43,6 +43,7 @@ function updateRecipe(row, mappings){
         const mapped = grist.mapColumnNames(row);
         // First check if all columns were mapped.
         if (mapped) {
+            console.log(mappings)
             document.getElementById('title').src = mapped.Titre;
             document.getElementById('text').innerText = mapped.Texte;
             console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
