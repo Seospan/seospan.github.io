@@ -1,4 +1,4 @@
-grist.ready({columns: ['Titre', 'Texte']});
+grist.ready({columns: ['Titre', 'Texte'], requiredAccess: 'read table'});
 grist.onRecord(function(record) {
 try {
     data.status = '';
