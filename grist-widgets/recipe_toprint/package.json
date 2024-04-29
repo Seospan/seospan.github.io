@@ -1,13 +1,13 @@
 {
-  "name": "@gristlabs/widget-map",
-  "description": "Widget for showing geolocated data on a map.",
-  "homePage": "https://github.com/gristlabs/grist-widget",
+  "name": "@seospan/grist-widgets/recipe_toprint",
+  "description": "Widget for editing a recipe and exporting it to pdf",
+  "homePage": "https://github.com/seospan",
   "version": "0.0.1",
   "grist": [
     {
-      "name": "Map",
-      "url": "https://gristlabs.github.io/grist-widget/map/index.html",
-      "widgetId": "@gristlabs/widget-map#map",
+      "name": "Print recipe",
+      "url": "https://seospan.github.io/grist-widget/recipe_toprint/index.html",
+      "widgetId": "@gristlabs/widget-recipe_toprint#recipe",
       "published": true,
       "accessLevel": "read table",
       "renderAfterReady": true
