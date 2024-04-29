@@ -1,9 +1,9 @@
 function ready(fn) {
     if (document.readyState !== 'loading'){
-      console.log("DOC NOT READY")
+      console.log("DOC READY")
       fn();
     } else {
-        console.log("DOC READY")
+      console.log("DOC NOTT READY : "+document.readyState)
       document.addEventListener('DOMContentLoaded', fn);
     }
 }
