@@ -6,6 +6,24 @@ function ready(fn) {
     }
 }
 
+const data = {
+    count: 0,
+    invoice: '',
+    status: 'waiting',
+    tableConnected: false,
+    rowConnected: false,
+    haveRows: false,
+  };
+  let app = undefined;
+
+function handleError(err) {
+    console.error(err);
+    const target = app || data;
+    target.invoice = '';
+    target.status = String(err).replace(/^Error: /, '');
+    console.log(data);
+}
+
 ready(function(){
     grist.ready({columns: ['Titre', 'Texte'], requiredAccess: 'read table'});
     grist.onRecord(function(record, mappings) {
@@ -40,4 +58,13 @@ ready(function(){
         }
 
     });
+
+    Vue.config.errorHandler = function (err, vm, info)  {
+        handleError(err);
+      };
+    
+    app = new Vue({
+        el: '#app',
+        data: data
+      });
 })
