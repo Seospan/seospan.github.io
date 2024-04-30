@@ -135,8 +135,10 @@ ready(function(){
                     document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
                 }
     
-                document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes'
-                document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale'
+                document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes';
+                document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale';
+
+                document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
