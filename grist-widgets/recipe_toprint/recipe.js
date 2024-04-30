@@ -76,7 +76,7 @@ function handleError(err) {
 
 ready(function(){
     console.log("GOGOGO");
-    grist.ready({columns: ['Titre', 'Texte', 'Recette'], requiredAccess: 'read table'});
+    grist.ready({columns: ['Recette'], requiredAccess: 'read table'});
     grist.onRecord(function (row, mappings){
         console.log("TESTlyyg");
         //console.log("row " + row);
@@ -100,18 +100,18 @@ ready(function(){
             if (mapped) {
                 console.log("MAPPED");
                 console.log(mappings);
-                console.log(mapped);
+                console.log(mapped.Recette);
                 document.getElementById('title').src = mapped.Recette.Titre;
                 if(mapped.Recette.is_vege){
-                    document.getElementById('is_vege').innerText = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
+                    document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
                 }else{
-                    document.getElementById('is_vege').innerText = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
+                    document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
                 }
     
                 if(mapped.Recette.is_vegan){
-                    document.getElementById('is_vegan').innerText = 'Vegan : <span style="color:green"> ✓ Oui</span>';
+                    document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:green"> ✓ Oui</span>';
                 }else{
-                    document.getElementById('is_vegan').innerText = 'Vegan : <span style="color:red"> ✕ Non</span>';
+                    document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
                 }
     
                 if(mapped.Recette.is_lactose_free){
