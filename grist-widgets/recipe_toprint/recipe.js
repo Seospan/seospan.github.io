@@ -77,7 +77,7 @@ function handleError(err) {
 ready(function(){
     console.log("GOGOGO");
     grist.ready({columns: ['Titre', 'Texte', 'Recette'], requiredAccess: 'read table'});
-    grist.onRecord(function (){
+    grist.onRecord(function (row, mappings){
         console.log("TESTlyyg");
         //console.log("row " + row);
         //console.log("mappings" + mappings);
