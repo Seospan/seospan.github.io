@@ -81,9 +81,6 @@ ready(function(){
         console.log("TESTlyyg");
         //console.log("row " + row);
         //console.log("mappings" + mappings);
-        console.log("arg : " + arguments);
-        console.log(arguments);
-    
     
         try {
             if (row === null) {
@@ -101,6 +98,7 @@ ready(function(){
             const mapped = grist.mapColumnNames(row);
             // First check if all columns were mapped.
             if (mapped) {
+                console.log("MAPPED");
                 console.log(mappings);
                 document.getElementById('title').src = mapped.Titre;
                 document.getElementById('text').innerText = mapped.Texte;
