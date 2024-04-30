@@ -118,7 +118,9 @@ ready(function(){
                 console.log(mappings);
                 console.log(mapped.recette);
 
-                document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
+                var data_string = JSON.stringify( mapped.recette);
+                
+                //document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
                 document.getElementById('title').innerHTML = mapped.recette.Nom;
                 if(mapped.recette.Is_vegetarien){
                     document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
