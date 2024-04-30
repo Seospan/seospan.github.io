@@ -100,8 +100,8 @@ ready(function(){
             if (mapped) {
                 console.log("MAPPED");
                 console.log(mappings);
+                console.log(mapped);
                 document.getElementById('title').src = mapped.Titre;
-                document.getElementById('text').innerText = mapped.Texte;
                 if(mapped.is_vege){
                     document.getElementById('is_vege').innerText = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
                 }else{
