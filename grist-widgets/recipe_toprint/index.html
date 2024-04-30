@@ -10,9 +10,9 @@
     <script src="recipe.js"></script>
   </head>
   <body>
-    pjbygojlkihk
+    pjbygojlkihku
     <!--<h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>-->
-    <div id="alpine" x-data='{data:"data_string"}' @refresh="data='blop'">
+    <div id="alpine" x-data='{data:"data_string"}' @refresh="data=data_string">
       <h4 x-text="data"></h4>
       <div @click="$dispatch('refresh')">Refresh</div>
     </div>
