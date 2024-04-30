@@ -23,6 +23,7 @@ function handleError(err) {
     const target = app || data;
     target.invoice = '';
     target.status = String(err).replace(/^Error: /, '');
+    console.log("ERROR : ");
     console.log(data);
 }
 
