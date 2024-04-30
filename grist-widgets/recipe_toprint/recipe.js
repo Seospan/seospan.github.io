@@ -15,7 +15,7 @@ function handleError(err) {
 }
 
 function updateRecipe(row, mappings){
-    console.log("TEST");
+    console.log("TESTyy");
     console.log(row);
 
     try {
@@ -34,7 +34,7 @@ function updateRecipe(row, mappings){
         const mapped = grist.mapColumnNames(row);
         // First check if all columns were mapped.
         if (mapped) {
-            console.log(mappings)
+            console.log(mappings);
             document.getElementById('title').src = mapped.Titre;
             document.getElementById('text').innerText = mapped.Texte;
             if(mapped.is_vege){
