@@ -93,6 +93,11 @@ ready(function(){
                 title:'Multiplicateur de la recette',
                 optional: false,
             },
+            {
+                name:'ingredients',
+                title:'Liste des records d\'ingredients',
+                optional: false,
+            },
         ], requiredAccess: 'read table'});
     grist.onRecord(function (row, mappings){
         console.log("TESTlyyg");
