@@ -76,7 +76,23 @@ function handleError(err) {
 
 ready(function(){
     console.log("GOGOGO");
-    grist.ready({columns: ['Recette'], requiredAccess: 'read table'});
+    grist.ready({columns: [
+            {
+                name:'recette',
+                title:'Recette',
+                optional: false,
+            },
+            {
+                name:'nb_portions',
+                title:'Nb de portions',
+                optional: false,
+            },
+            {
+                name:'multip_recette',
+                title:'Multiplicateur de la recette',
+                optional: false,
+            },
+        ], requiredAccess: 'read table'});
     grist.onRecord(function (row, mappings){
         console.log("TESTlyyg");
         //console.log("row " + row);
@@ -100,24 +116,18 @@ ready(function(){
             if (mapped) {
                 console.log("MAPPED");
                 console.log(mappings);
-                console.log(mapped.Recette);
-                document.getElementById('title').src = mapped.Recette.Titre;
-                if(mapped.Recette.Is_vegetarien){
+                console.log(mapped.recette);
+                document.getElementById('title').src = mapped.recette.Nom;
+                if(mapped.recette.Is_vegetarien){
                     document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
                 }else{
                     document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
                 }
     
-                if(mapped.Recette.Is_vegan){
+                if(mapped.recette.Is_vegan){
                     document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:green"> ✓ Oui</span>';
                 }else{
                     document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
-                }
-    
-                if(mapped.Recette.is_lactose_free){
-                    document.getElementById('is_lactose_free').innerHTML = ' Sans lactose <span style="color:green"> ✓ Oui</span>';
-                }else{
-                    document.getElementById('is_lactose_free').innerHTML = 'Sans lactose <span style="color:red"> ✕ Non</span>';
                 }
     
                 document.getElementById('nb_convives').innerHTML = ' Pour : <?= data[i].scale ?> personnes'
