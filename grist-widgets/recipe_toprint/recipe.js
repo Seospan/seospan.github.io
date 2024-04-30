@@ -15,8 +15,11 @@ function handleError(err) {
 }
 
 function updateRecipe(row, mappings){
-    console.log("TESTyy");
-    console.log(row);
+    console.log("TESTlyy");
+    console.log("row " + row);
+    console.log("mappings" + mappings);
+    console.log("arg : " + arguments);
+
 
     try {
         if (row === null) {
@@ -54,6 +57,8 @@ function updateRecipe(row, mappings){
             }else{
                 document.getElementById('is_lactose_free').innerText = 'Sans lactose <span style="color:red"> ✕ Non</span>';
             }
+
+            document.getElementById('nb_convives').innerText = ' Pour : <?= data[i].scale ?> personnes'
 
 
             console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
