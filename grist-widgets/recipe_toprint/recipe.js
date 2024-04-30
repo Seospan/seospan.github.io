@@ -16,6 +16,7 @@ function handleError(err) {
 
 function updateRecipe(row, mappings){
     console.log("TEST");
+    console.log(row);
 
     try {
         if (row === null) {
@@ -39,8 +40,22 @@ function updateRecipe(row, mappings){
             if(mapped.is_vege){
                 document.getElementById('is_vege').innerText = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
             }else{
-                document.getElementById('is_vege').innerText = '<h4> Vegetarien : <span style="color:red"> ✕ Non</span></h4>';
+                document.getElementById('is_vege').innerText = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
             }
+
+            if(mapped.is_vegan){
+                document.getElementById('is_vegan').innerText = 'Vegan : <span style="color:green"> ✓ Oui</span>';
+            }else{
+                document.getElementById('is_vegan').innerText = 'Vegan : <span style="color:red"> ✕ Non</span>';
+            }
+
+            if(mapped.is_lactose_free){
+                document.getElementById('is_lactose_free').innerText = ' Sans lactose <span style="color:green"> ✓ Oui</span>';
+            }else{
+                document.getElementById('is_lactose_free').innerText = 'Sans lactose <span style="color:red"> ✕ Non</span>';
+            }
+
+
             console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
         } else {
             // Helper returned a null value. It means that not all
@@ -56,6 +71,6 @@ function updateRecipe(row, mappings){
 
 ready(function(){
     console.log("GOGOGO");
-    grist.ready({columns: ['Titre', 'Texte', 'is_vege'], requiredAccess: 'read table'});
+    grist.ready({columns: ['Titre', 'Texte', 'Recette'], requiredAccess: 'read table'});
     grist.onRecord(updateRecipe);
 })
