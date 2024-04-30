@@ -82,6 +82,7 @@ ready(function(){
         //console.log("row " + row);
         //console.log("mappings" + mappings);
         console.log("arg : " + arguments);
+        console.log(arguments);
     
     
         try {
