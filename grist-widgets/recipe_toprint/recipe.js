@@ -130,7 +130,8 @@ ready(function(){
                     document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
                 }
     
-                document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.recette.nb_portions+' personnes'
+                document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes'
+                document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale'
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
