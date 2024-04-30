@@ -64,7 +64,7 @@ function updateRecipe(row, mappings){
 
 ready(function(){
     grist.ready({columns: ['Titre', 'Texte'], requiredAccess: 'read table'});
-    grist.onRecord(updateRecipe(row, mappings));
+    grist.onRecord(updateRecipe);
 
     Vue.config.errorHandler = function (err, vm, info)  {
         handleError(err);
