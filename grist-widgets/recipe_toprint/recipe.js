@@ -72,5 +72,5 @@ function updateRecipe(row, mappings){
 ready(function(){
     console.log("GOGOGO");
     grist.ready({columns: ['Titre', 'Texte', 'Recette'], requiredAccess: 'read table'});
-    grist.onRecord(updateRecipe);
+    grist.onRecord(updateRecipe(record, mappings));
 })
