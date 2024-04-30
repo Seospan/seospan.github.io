@@ -101,20 +101,20 @@ ready(function(){
                 console.log("MAPPED");
                 console.log(mappings);
                 console.log(mapped);
-                document.getElementById('title').src = mapped[0].Titre;
-                if(mapped.is_vege){
+                document.getElementById('title').src = mapped.Recette.Titre;
+                if(mapped.Recette.is_vege){
                     document.getElementById('is_vege').innerText = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
                 }else{
                     document.getElementById('is_vege').innerText = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
                 }
     
-                if(mapped.is_vegan){
+                if(mapped.Recette.is_vegan){
                     document.getElementById('is_vegan').innerText = 'Vegan : <span style="color:green"> ✓ Oui</span>';
                 }else{
                     document.getElementById('is_vegan').innerText = 'Vegan : <span style="color:red"> ✕ Non</span>';
                 }
     
-                if(mapped.is_lactose_free){
+                if(mapped.Recette.is_lactose_free){
                     document.getElementById('is_lactose_free').innerHTML = ' Sans lactose <span style="color:green"> ✓ Oui</span>';
                 }else{
                     document.getElementById('is_lactose_free').innerHTML = 'Sans lactose <span style="color:red"> ✕ Non</span>';
