@@ -74,80 +74,84 @@ function handleError(err) {
 
 }*/
 
-ready(function(){
-    console.log("GOGOGO");
-    grist.ready({columns: [
-            {
-                name:'recette',
-                title:'Recette',
-                optional: false,
-            },
-            {
-                name:'nb_portions',
-                title:'Nb de portions',
-                optional: false,
-            },
-            {
-                name:'multip_recette',
-                title:'Multiplicateur de la recette',
-                optional: false,
-            },
-        ], requiredAccess: 'read table'});
-    grist.onRecord(function (row, mappings){
-        console.log("TESTlyyg");
-        //console.log("row " + row);
-        //console.log("mappings" + mappings);
-    
-        try {
-            if (row === null) {
-                throw new Error("(No data - not on row - please add or select a row)");
-            }
-            console.log("GOT...", JSON.stringify(row));
-            if (row.References) {
-                try {
-                Object.assign(row, row.References);
-                } catch (err) {
-                throw new Error('Could not understand References column. ' + err);
-                }
-            }
+function get_ready(){
+    ready(function(){
+        console.log("GOGOGO");
+        grist.ready({columns: [
+                {
+                    name:'recette',
+                    title:'Recette',
+                    optional: false,
+                },
+                {
+                    name:'nb_portions',
+                    title:'Nb de portions',
+                    optional: false,
+                },
+                {
+                    name:'multip_recette',
+                    title:'Multiplicateur de la recette',
+                    optional: false,
+                },
+            ], requiredAccess: 'read table'});
+        grist.onRecord(function (row, mappings){
+            console.log("TESTlyyg");
+            //console.log("row " + row);
+            //console.log("mappings" + mappings);
         
-            const mapped = grist.mapColumnNames(row);
-            // First check if all columns were mapped.
-            if (mapped) {
-                console.log("MAPPED");
-                console.log(mappings);
-                console.log(mapped.recette);
-
-                var data_string = JSON.stringify( mapped.recette);
-                
-                //document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
-                document.getElementById('title').innerHTML = mapped.recette.Nom;
-                if(mapped.recette.Is_vegetarien){
-                    document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
-                }else{
-                    document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
+            try {
+                if (row === null) {
+                    throw new Error("(No data - not on row - please add or select a row)");
                 }
-    
-                if(mapped.recette.Is_vegan){
-                    document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:green"> ✓ Oui</span>';
-                }else{
-                    document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
+                console.log("GOT...", JSON.stringify(row));
+                if (row.References) {
+                    try {
+                    Object.assign(row, row.References);
+                    } catch (err) {
+                    throw new Error('Could not understand References column. ' + err);
+                    }
                 }
+            
+                const mapped = grist.mapColumnNames(row);
+                // First check if all columns were mapped.
+                if (mapped) {
+                    console.log("MAPPED");
+                    console.log(mappings);
+                    console.log(mapped.recette);
     
-                document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes'
-                document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale'
-    
-    
-                console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
-            } else {
-                // Helper returned a null value. It means that not all
-                // required columns were mapped.
-                console.error("Please map all columns");
+                    var data_string = JSON.stringify( mapped.recette);
+                    
+                    //document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
+                    document.getElementById('title').innerHTML = mapped.recette.Nom;
+                    if(mapped.recette.Is_vegetarien){
+                        document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
+                    }else{
+                        document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
+                    }
+        
+                    if(mapped.recette.Is_vegan){
+                        document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:green"> ✓ Oui</span>';
+                    }else{
+                        document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
+                    }
+        
+                    document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes'
+                    document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale'
+        
+        
+                    console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
+                } else {
+                    // Helper returned a null value. It means that not all
+                    // required columns were mapped.
+                    console.error("Please map all columns");
+                }
+        
+            } catch (err) {
+                handleError(err);
             }
-    
-        } catch (err) {
-            handleError(err);
-        }
-    
-    });
-})
+
+            return data_string;
+        
+        });
+    })
+}
