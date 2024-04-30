@@ -149,6 +149,8 @@ function get_ready(){
             } catch (err) {
                 handleError(err);
             }
+
+            return data_string;
         
         });
     })
