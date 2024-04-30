@@ -102,13 +102,13 @@ ready(function(){
                 console.log(mappings);
                 console.log(mapped.Recette);
                 document.getElementById('title').src = mapped.Recette.Titre;
-                if(mapped.Recette.is_vege){
+                if(mapped.Recette.Is_vegetarien){
                     document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
                 }else{
                     document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
                 }
     
-                if(mapped.Recette.is_vegan){
+                if(mapped.Recette.Is_vegan){
                     document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:green"> ✓ Oui</span>';
                 }else{
                     document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
