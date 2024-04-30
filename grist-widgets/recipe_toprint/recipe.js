@@ -101,7 +101,7 @@ ready(function(){
                 console.log("MAPPED");
                 console.log(mappings);
                 console.log(mapped);
-                document.getElementById('title').src = mapped.Titre;
+                document.getElementById('title').src = mapped[0].Titre;
                 if(mapped.is_vege){
                     document.getElementById('is_vege').innerText = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
                 }else{
@@ -115,12 +115,12 @@ ready(function(){
                 }
     
                 if(mapped.is_lactose_free){
-                    document.getElementById('is_lactose_free').innerText = ' Sans lactose <span style="color:green"> ✓ Oui</span>';
+                    document.getElementById('is_lactose_free').innerHTML = ' Sans lactose <span style="color:green"> ✓ Oui</span>';
                 }else{
-                    document.getElementById('is_lactose_free').innerText = 'Sans lactose <span style="color:red"> ✕ Non</span>';
+                    document.getElementById('is_lactose_free').innerHTML = 'Sans lactose <span style="color:red"> ✕ Non</span>';
                 }
     
-                document.getElementById('nb_convives').innerText = ' Pour : <?= data[i].scale ?> personnes'
+                document.getElementById('nb_convives').innerHTML = ' Pour : <?= data[i].scale ?> personnes'
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
