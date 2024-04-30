@@ -10,7 +10,46 @@
   </head>
   <body>
     ppp
-    <div id="title"></div>
-    <div id="text"></div>
-  </body>
+    <h2 style="text-align:center; margin-bottom : 40px; margin-top:30px"><?= data[i].recipeName ?></h2>
+
+          <div style="width:100%">
+            <div style="display:inline-block; width:49%; vertical-align:top;">
+
+                <h4 id="is_vege"> Vegetarien : <span style="color:green"> ✓ Oui</span></h4>
+            <!--
+              <? if ( data[i].is_vegan == "Oui" ) { ?>
+                <h4> Vegan : <span style="color:green"> ✓ Oui</span></h4>
+              <? } else  { ?>
+                <h4> Vegan : <span style="color:red"> ✕ Non</span></h4>
+              <? } ?>
+
+              <? if ( data[i].is_lactose_free == "Oui" ) { ?>
+                <h4> Sans lactose : <span style="color:green"> ✓ Oui</span></h4>
+              <? } else  { ?>
+                <h4> Sans lactose : <span style="color:red"> ✕ Non</span></h4>
+              <? } ?>
+
+              <h4> Pour : <?= data[i].scale ?> personnes</h4>
+          </div>
+
+          <table style="display:inline-block; width:49%; vertical-align:top;">
+            <thead>
+                <tr>
+                    <th colspan="2">Ingredients</th>
+                </tr>
+            </thead>
+            <tbody>
+                <? for(let j=0; j<data[i].ingredients.length; j++) { ?>
+                  <tr>
+                      <td><?= data[i].ingredients[j].ingredientName ?></td>
+                      <td><?= data[i].ingredients[j].ingredientTotalQty ?><?= data[i].ingredients[j].ingredientUnit ?></td>
+                  </tr>
+                <? } ?>
+            </tbody>
+          </table>
+        </div>
+
+      <p style="white-space: pre-line; font-size : 1.5em; line-height: 150%;"><?= data[i].instructions ?></p>
+      -->
+    </body>
 </html>
