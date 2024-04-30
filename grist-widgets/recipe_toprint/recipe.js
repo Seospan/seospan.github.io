@@ -117,7 +117,7 @@ ready(function(){
                 console.log("MAPPED");
                 console.log(mappings);
                 console.log(mapped.recette);
-                document.getElementById('title').src = mapped.recette.Nom;
+                document.getElementById('title').innerHTML = mapped.recette.Nom;
                 if(mapped.recette.Is_vegetarien){
                     document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
                 }else{
@@ -130,7 +130,7 @@ ready(function(){
                     document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
                 }
     
-                document.getElementById('nb_convives').innerHTML = ' Pour : <?= data[i].scale ?> personnes'
+                document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.recette.nb_portions+' personnes'
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
