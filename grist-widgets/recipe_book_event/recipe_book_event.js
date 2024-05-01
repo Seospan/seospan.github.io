@@ -129,13 +129,14 @@ ready(function(){
                 console.log(mapped.details_repas);
                 console.log(mappings);
 
-                var details_repas = JSON.parse(mapped.details_repas);
+                var details_repas = Array.from(mapped.details_repas);
 
                 var html_repas = "";
                 for(repas of details_repas){
+                    repas_json = JSON.parse(repas)
                     console.log("rrr");
-                    console.log(repas);
-                    html_repas += repas.nom;
+                    console.log(repas_json);
+                    html_repas += repas_json.nom;
                 }
 
                 document.getElementById('texte_recette').innerHTML = html_repas;
