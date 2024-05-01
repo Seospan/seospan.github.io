@@ -161,7 +161,6 @@ ready(function(){
                     console.log(typeof(shopping_list[rayon]));
                     console.log(shopping_list[rayon]);
                     
-                    var shopping_list_items = shopping_list[rayon]['items'];
                     //console.log(shopping_list_items)
 
                     for(rayon in shopping_list){
@@ -172,6 +171,8 @@ ready(function(){
                         html_shopping_list += '</tr></thead>';
                         html_shopping_list += '<tbody>';
 
+                        var shopping_list_items = shopping_list[rayon]['items'];
+                        
                         for(item in shopping_list_items){
                             console.log("ITEM");
                             console.log(shopping_list_items[item]);
