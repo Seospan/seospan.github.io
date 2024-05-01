@@ -148,6 +148,9 @@ ready(function(){
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
                 var shopping_list = mapped.shopping_list;
+                console.log("SHOPPING LIST");
+                console.log(typeof(shopping_list));
+                console.log(shopping_list);
 
                 var html_shopping_list = "";
                 for(rayon of shopping_list){
