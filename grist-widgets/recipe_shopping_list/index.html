@@ -18,12 +18,12 @@
       <div @click="$dispatch('refresh')">Refresh</div>
     </div>-->
     <input type="button" class="no-printme" id="download_button" value="Télécharger la liste de courses" onclick="javascript:window.print()">
-    <div class="printme" id="liste_courses" style="margin-bottom:20px">
+    <div class="printme" id="liste_courses">
       <div style="text-align:center;">
         <h3 id="nom_evenement" style="font-size:30px; color:#860E4E"></h3>
         <div style="font-size:30px; color:#860E4E">Liste de courses</div>
         <div id="dates_evenement" style="font-size:15px"></div>
-        <div style="font-size:15px">Estimation : <span id="estim_nb_public"></span> personnes</div>
+        <div style="font-size:15px; margin-bottom: 20px;">Estimation : <span id="estim_nb_public"></span> personnes</div>
       </div> 
 
       <div id="shopping_list"></div>
