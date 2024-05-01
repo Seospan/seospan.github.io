@@ -153,11 +153,11 @@ ready(function(){
                 console.log(shopping_list);
 
                 var html_shopping_list = "";
-                //for(rayon of shopping_list){
-                  //  console.log("LOG RAYON");
-                   // console.log(rayon);
+                for([rayon, rayon_details] in shopping_list){
+                    console.log("LOG RAYON");
+                    console.log(rayon);
 
-                 //   html_shopping_list += rayon.Nom
+                    html_shopping_list += rayon_details.Nom
 
 
 
@@ -171,7 +171,7 @@ ready(function(){
                     }*/
 
 
-                //}
+                }
 
 
                 document.getElementById('shopping_list').innerHTML = html_shopping_list;
