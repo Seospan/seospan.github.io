@@ -126,8 +126,17 @@ ready(function(){
             // First check if all columns were mapped.
             if (mapped) {
                 console.log("MAPPED");
-                console.log(mapped.repas_lies_records);
+                console.log(mapped.details_repas);
                 console.log(mappings);
+
+                var details_repas = mapped.details_repas;
+
+                var html_repas = "";
+                for(repas of details_repas){
+                    html_repas += repas.nom;
+                }
+
+                document.getElementById('texte_recette').innerHTML = html_repas;
 
                 //var data_string = JSON.stringify( mapped.recette);
 
