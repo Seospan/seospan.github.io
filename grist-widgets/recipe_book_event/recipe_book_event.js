@@ -79,38 +79,8 @@ ready(function(){
     console.log("GOGOGO");
     grist.ready({columns: [
             {
-                name:'recette',
-                title:'Recette',
-                optional: false,
-            },
-            {
-                name:'nb_portions',
-                title:'Nb de portions',
-                optional: false,
-            },
-            {
-                name:'multip_recette',
-                title:'Multiplicateur de la recette',
-                optional: false,
-            },
-            {
-                name:'ingredients',
-                title:'Liste des records d\'ingredients',
-                optional: false,
-            },
-            {
-                name:'repas_lie',
-                title:'Repas lié',
-                optional: false,
-            },
-            {
-                name:'session_cuisine',
-                title:'Session de cuisine',
-                optional: false,
-            },
-            {
-                name:'evenement_lie',
-                title:'Evénement lié',
+                name:'evenement',
+                title:'Evenement',
                 optional: false,
             },
         ], requiredAccess: 'read table'});
@@ -136,17 +106,12 @@ ready(function(){
             // First check if all columns were mapped.
             if (mapped) {
                 console.log("MAPPED");
-                console.log(mapped.repas_lie);
-                console.log(mapped.evenement_lie);
+                console.log(mapped.evenement);
                 console.log(mappings);
-                console.log(mapped.recette);
-                console.log(mapped.ingredients);
 
                 var data_string = JSON.stringify( mapped.recette);
-                
-                //document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
 
-                document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
+                /*document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
                 document.getElementById('session_cuisine').innerHTML = "[" + mapped.session_cuisine + "]";
 
                 document.getElementById('title').innerHTML = mapped.recette.Nom;
@@ -175,7 +140,7 @@ ready(function(){
                     html_ingredients_list += "<td>" + ingredient_scaled + ingredient_in_recipe.Ingredient.Unite.Abbreviation + "</td>";
                 }
 
-                document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;
+                document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;*/
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
