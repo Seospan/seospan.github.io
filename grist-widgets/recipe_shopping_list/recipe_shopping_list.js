@@ -163,26 +163,24 @@ ready(function(){
                     
                     //console.log(shopping_list_items)
 
-                    for(rayon in shopping_list){
-                        html_shopping_list += '<table style="display:inline-block; width:49%; vertical-align:top; margin-bottom:100px;">';
-                        html_shopping_list += '<thead>';
-                        html_shopping_list += '<tr>'
-                        html_shopping_list += '<th colspan="2" style="font-size:20px;">'+shopping_list[rayon]["nom_du_rayon"]+'</th>';
-                        html_shopping_list += '</tr></thead>';
-                        html_shopping_list += '<tbody>';
+                    html_shopping_list += '<table style="display:inline-block; width:49%; vertical-align:top; margin-bottom:100px;">';
+                    html_shopping_list += '<thead>';
+                    html_shopping_list += '<tr>'
+                    html_shopping_list += '<th colspan="2" style="font-size:20px;">'+shopping_list[rayon]["nom_du_rayon"]+'</th>';
+                    html_shopping_list += '</tr></thead>';
+                    html_shopping_list += '<tbody>';
 
-                        var shopping_list_items = shopping_list[rayon]['items'];
-                        
-                        for(item in shopping_list_items){
-                            console.log("ITEM");
-                            console.log(shopping_list_items[item]);
-                            html_shopping_list += "<tr>";
-                            html_shopping_list += "<td>"+shopping_list_items[item]['nom']+"</td>";
-                            html_shopping_list += "<td>"+shopping_list_items[item]['qte_totale']+" "+shopping_list_items[item]['unite']+"</td>";
-                            html_shopping_list += "</tr>"
-                        }
-                        html_shopping_list += '</tbody>';
+                    var shopping_list_items = shopping_list[rayon]['items'];
+
+                    for(item in shopping_list_items){
+                        console.log("ITEM");
+                        console.log(shopping_list_items[item]);
+                        html_shopping_list += "<tr>";
+                        html_shopping_list += "<td>"+shopping_list_items[item]['nom']+"</td>";
+                        html_shopping_list += "<td>"+shopping_list_items[item]['qte_totale']+" "+shopping_list_items[item]['unite']+"</td>";
+                        html_shopping_list += "</tr>"
                     }
+                    html_shopping_list += '</tbody>';
 
 
 
