@@ -123,7 +123,14 @@ function recipeToHTML(mapped){
 
     html_recette += '</div>';
 
-    document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
+
+    html_recette += '<table style="display:inline-block; width:49%; vertical-align:top;">';
+    html_recette += '<thead>';
+    html_recette += '<tr>';
+    html_recette += '<th colspan="2">Ingredients</th>';
+    html_recette += '</tr>';
+    html_recette += '</thead>';
+    html_recette += '<tbody id="ingredients_table_body">';
 
     var html_ingredients_list = "";
     for(ingredient_in_recipe of mapped.ingredients){
@@ -132,8 +139,12 @@ function recipeToHTML(mapped){
         var ingredient_scaled = ingredient_in_recipe.qte_par_personne * mapped.nb_portions;
         html_ingredients_list += "<td>" + ingredient_scaled + ingredient_in_recipe.Ingredient.Unite.Abbreviation + "</td>";
     }
+    //document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;
 
-    document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;
+    html_recette += '</tbody>';
+    html_recette += '</table>';
+
+    document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
 
     return(html_recette);
 
