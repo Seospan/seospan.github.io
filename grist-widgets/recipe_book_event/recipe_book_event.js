@@ -212,7 +212,7 @@ ready(function(){
                     //html_repas += repas.nom;
                 }
 
-                document.getElementById('texte_recette').innerHTML = html_repas;
+                document.getElementById('recette').innerHTML = html_repas;
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
