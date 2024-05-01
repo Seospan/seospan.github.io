@@ -98,6 +98,21 @@ ready(function(){
                 title:'Liste des records d\'ingredients',
                 optional: false,
             },
+            {
+                name:'repas_lie',
+                title:'Repas lié',
+                optional: false,
+            },
+            {
+                name:'session_cuisine',
+                title:'Session de cuisine',
+                optional: false,
+            },
+            {
+                name:'evenement_lie',
+                title:'Evénement lié',
+                optional: false,
+            },
         ], requiredAccess: 'read table'});
     grist.onRecord(function (row, mappings){
         console.log("TESTlyyg");
@@ -121,6 +136,8 @@ ready(function(){
             // First check if all columns were mapped.
             if (mapped) {
                 console.log("MAPPED");
+                console.log(repas_lie);
+                console.log(evenement_lie);
                 console.log(mappings);
                 console.log(mapped.recette);
                 console.log(mapped.ingredients);
@@ -128,6 +145,10 @@ ready(function(){
                 var data_string = JSON.stringify( mapped.recette);
                 
                 //document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
+
+                document.getElementById('evenement_repas').innerHTML = mapped.repas_lie + " - Repas : " + mapped.evenement_lie ;
+                document.getElementById('session_cuisine').innerHTML = mapped.session_cuisine;
+
                 document.getElementById('title').innerHTML = mapped.recette.Nom;
                 if(mapped.recette.Is_vegetarien){
                     document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
