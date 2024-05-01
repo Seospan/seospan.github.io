@@ -108,13 +108,18 @@ function recipeToHTML(mapped){
     }
 
     if(mapped.recette.Is_vegan){
-        document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:green"> ✓ Oui</span>';
+        html_recette += '<h4 id="is_vegan">'+'Vegan : <span style="color:green"> ✓ Oui</span>'+'</h4>';
+        //document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:green"> ✓ Oui</span>';
     }else{
-        document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
+        html_recette += '<h4 id="is_vegan">'+'Vegan : <span style="color:red"> ✕ Non</span>'+'</h4>';
+        //document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
     }
 
-    document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes';
-    document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale';
+    html_recette += '<h4 id="nb_portions"> Pour : '+mapped.nb_portions+' personnes</h4>';
+    //document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes';
+
+    html_recette += ' Représente '+mapped.multip_recette+' x la recette originale';
+    //document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale';
 
     html_recette += '</div>';
 
