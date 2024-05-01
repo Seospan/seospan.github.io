@@ -174,7 +174,7 @@ ready(function(){
 
                         for(item in shopping_list_items){
                             console.log("ITEM");
-                            console.log(item);
+                            console.log(shopping_list_items[item]);
                             html_shopping_list += "<tr>";
                             //keys = Object.keys(o)
                             //html_shopping_list += Object.values(item)[0]
