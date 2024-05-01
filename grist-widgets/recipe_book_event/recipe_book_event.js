@@ -90,8 +90,8 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
 
     var html_recette="";
 
-    html_recette += '<div id="evenement_repas" style="float: left; text-align:left">'+nom_evenement + " - Repas : " + repas_lie+'</div>';
-    html_recette += '<div id="session_cuisine" style="float: right; text-align:left">'+"[" + nom_session_cuisine + "]"+'</div>';
+    html_recette += '<div id="evenement_repas" style="float: left; text-align:left">'+nom_evenement +" - " + repas.date + " - Repas : " + repas_lie.nom+'</div>';
+    html_recette += '<div id="session_cuisine" style="float: right; text-align:left">'+"Prépa : [" + nom_session_cuisine + "]"+'</div>';
     html_recette += '<div style="clear:both;"></div>';
     html_recette += '<h2 id="title" style="text-align:center; margin-bottom : 40px; margin-top:50px">'+recette.Nom+'</h2>';
     html_recette += '<div style="width:100%">';
@@ -219,8 +219,8 @@ ready(function(){
                     for(recette_contexte of json_details_recettes){
                         console.log("UNE RECETTE");
                         console.log(recette_contexte);
-                        sommaire_HTML += repas.nom +"("+ repas.date +") - " + recette_contexte.details_recette.Nom + "<br />";
-                        html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas.nom);
+                        sommaire_HTML += repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
+                        html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
                     }
                     //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
                     //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
