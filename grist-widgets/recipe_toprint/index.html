@@ -10,7 +10,6 @@
     <script src="recipe.js"></script>
   </head>
   <body>
-    ooimu
     <!--<h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>-->
     <!--<div id="alpine" x-data='get_ready()' @refresh="data=data_string">
       <h4 x-text="nom"></h4>
@@ -37,25 +36,11 @@
             </tbody>
           </table>
 
-            <!--
-          <table style="display:inline-block; width:49%; vertical-align:top;">
-            <thead>
-                <tr>
-                    <th colspan="2">Ingredients</th>
-                </tr>
-            </thead>
-            <tbody>
-                <? for(let j=0; j<data[i].ingredients.length; j++) { ?>
-                  <tr>
-                      <td><?= data[i].ingredients[j].ingredientName ?></td>
-                      <td><?= data[i].ingredients[j].ingredientTotalQty ?><?= data[i].ingredients[j].ingredientUnit ?></td>
-                  </tr>
-                <? } ?>
-            </tbody>
-          </table>
-        </div>
--->
       <p id="texte_recette" style="white-space: pre-line; font-size : 1.5em; line-height: 150%;"></p>
+
+      <div class="print">
+        <a href="javascript:window.print()">Print</a>
+      </div>
       
     </body>
 </html>
