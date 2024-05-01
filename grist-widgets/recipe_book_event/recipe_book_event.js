@@ -204,12 +204,12 @@ ready(function(){
                     for(recette_contexte of json_details_recettes){
                         console.log("UNE RECETTE");
                         console.log(recette_contexte);
-                        recipeToHTML(mapped.nom_event, recette_contexte.nom_session_cuisine, recette_contexte.details_recette, recette_contexte.nb_portions, recette_contexte.nb_portions / recette_contexte.details_recette.Nombre_de_personnes, recette_contexte.ingredients, repas.nom);
+                        html_repas += recipeToHTML(mapped.nom_event, recette_contexte.nom_session_cuisine, recette_contexte.details_recette, recette_contexte.nb_portions, recette_contexte.nb_portions / recette_contexte.details_recette.Nombre_de_personnes, recette_contexte.ingredients, repas.nom);
                     }
                     //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
                     //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
-
-                    html_repas += repas.nom;
+                    
+                    //html_repas += repas.nom;
                 }
 
                 document.getElementById('texte_recette').innerHTML = html_repas;
