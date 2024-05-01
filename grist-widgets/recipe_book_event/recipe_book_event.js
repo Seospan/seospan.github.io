@@ -130,7 +130,7 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
     for(ingredient_in_recipe of recipe_ingredients){
         html_ingredients_list += "<tr>";
         html_ingredients_list += "<td>" + ingredient_in_recipe.Ingredient.Nom + "</td>";
-        var ingredient_scaled = ingredient_in_recipe.qte_par_personne * nb_portions;
+        var ingredient_scaled = (ingredient_in_recipe.qte_par_personne * nb_portions).toFixed(2);
         html_ingredients_list += "<td>" + ingredient_scaled + ingredient_in_recipe.Ingredient.Unite.Abbreviation + "</td>";
     }
 
