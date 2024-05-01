@@ -164,7 +164,7 @@ ready(function(){
                     //var shopping_list_items = JSON.parse(shopping_list[rayon]['items']);
                     //console.log(shopping_list_items)
 
-                    /*for(rayon in shopping_list){
+                    for(rayon in shopping_list){
                         html_shopping_list += '<table style="display:inline-block; width:49%; vertical-align:top; margin-bottom:100px;">';
                         html_shopping_list += '<thead>';
                         html_shopping_list += '<tr>'
@@ -177,7 +177,7 @@ ready(function(){
                             html_shopping_list += "</tr>"
                         }
                         html_shopping_list += '</tbody>';
-                    }*/
+                    }
 
 
 
