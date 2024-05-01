@@ -195,13 +195,15 @@ ready(function(){
             const mapped = grist.mapColumnNames(row);
             // First check if all columns were mapped.
             if (mapped) {
-                console.log("MAPPED");
-                console.log(mapped.details_repas);
-                console.log(mappings);
+                //console.log("MAPPED");
+                //console.log(mapped.details_repas);
+                //console.log(mappings);
+
+                document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
+                document.getElementById('dates_evenement').innerHTML = mapped.date_debut + " - " + mapped.date_fin ;
+                document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
                 var details_repas = JSON.parse(mapped.details_repas);
-                console.log("ooo");
-                console.log(details_repas);
 
                 var html_repas = "";
                 for(repas of details_repas){
