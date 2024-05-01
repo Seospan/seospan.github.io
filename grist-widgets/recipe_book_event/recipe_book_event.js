@@ -146,7 +146,6 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
 
 const date_options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
 
-
 ready(function(){
     console.log("GOGOGO");
     grist.ready({columns: [
@@ -208,6 +207,7 @@ ready(function(){
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
                 var details_repas = JSON.parse(mapped.details_repas);
+                var sommaire_HTML = "";
 
                 var html_repas = "";
                 for(repas of details_repas){
@@ -219,6 +219,7 @@ ready(function(){
                     for(recette_contexte of json_details_recettes){
                         console.log("UNE RECETTE");
                         console.log(recette_contexte);
+                        sommaire_HTML += repas.nom + " - " + recette_contexte.details_recette.nom + "<br />";
                         html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas.nom);
                     }
                     //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
@@ -227,6 +228,7 @@ ready(function(){
                     //html_repas += repas.nom;
                 }
 
+                document.getElementById('sommaire').innerHTML = sommaire_HTML;
                 document.getElementById('all_recettes').innerHTML = html_repas;
     
     
