@@ -219,7 +219,7 @@ ready(function(){
                     for(recette_contexte of json_details_recettes){
                         console.log("UNE RECETTE");
                         console.log(recette_contexte);
-                        sommaire_HTML += repas.nom + " - " + recette_contexte.details_recette.nom + "<br />";
+                        sommaire_HTML += repas.nom +"("+ repas.date +") - " + recette_contexte.details_recette.Nom + "<br />";
                         html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas.nom);
                     }
                     //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
