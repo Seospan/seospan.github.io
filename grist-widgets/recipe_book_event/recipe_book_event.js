@@ -111,6 +111,8 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
 
     html_recette += '<h4 id="nb_portions"> Pour : '+nb_portions+' personnes</h4>';
 
+    html_recette += '<h4 id="estim_duree"> Estimation : '+recette.Duree_de_preparation_estimee+' de prepa</h4>';
+
     html_recette += '<h4 id="multip_recette"> Représente '+multip_recette+' x la recette originale</h4>';
 
     html_recette += 'Notes : '+note_contexte_recette;
