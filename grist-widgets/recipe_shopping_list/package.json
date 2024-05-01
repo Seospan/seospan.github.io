@@ -1,5 +1,5 @@
 {
-  "name": "@seospan/grist-widgets/recipe_shopping_listt",
+  "name": "@seospan/grist-widgets/recipe_shopping_list",
   "description": "Widget for editing a recipe shopping list for an event",
   "homePage": "https://github.com/seospan",
   "version": "0.0.1",
