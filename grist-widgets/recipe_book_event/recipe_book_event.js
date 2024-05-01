@@ -79,7 +79,7 @@ ready(function(){
     console.log("GOGOGO");
     grist.ready({columns: [
             {
-                name:'repas_lies_records',
+                name:'details_repas',
                 title:'Détails des repas liés',
                 optional: false,
             },
