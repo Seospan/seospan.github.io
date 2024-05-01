@@ -1,0 +1,16 @@
+{
+  "name": "@seospan/grist-widgets/recipe_shopping_listt",
+  "description": "Widget for editing a recipe shopping list for an event",
+  "homePage": "https://github.com/seospan",
+  "version": "0.0.1",
+  "grist": [
+    {
+      "name": "Recipe book for an event",
+      "url": "https://seospan.github.io/grist-widget/recipe_shopping_list/index.html",
+      "widgetId": "@gristlabs/widget-recipe_toprint#recipe_shopping_list",
+      "published": true,
+      "accessLevel": "read table",
+      "renderAfterReady": true
+    }
+  ]
+}
