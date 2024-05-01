@@ -118,7 +118,7 @@ function recipeToHTML(mapped){
     html_recette += '<h4 id="nb_portions"> Pour : '+mapped.nb_portions+' personnes</h4>';
     //document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes';
 
-    html_recette += ' Représente '+mapped.multip_recette+' x la recette originale';
+    html_recette += '<h4 id="multip_recette"> Représente '+mapped.multip_recette+' x la recette originale</h4>';
     //document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale';
 
     html_recette += '</div>';
