@@ -149,11 +149,11 @@ ready(function(){
 
                 var shopping_list = mapped.shopping_list;
                 console.log("SHOPPING LIST");
-                console.log(typeof(shopping_list));
-                console.log(shopping_list);
 
                 var html_shopping_list = "";
                 shopping_list = JSON.parse(shopping_list);
+                console.log(typeof(shopping_list));
+                console.log(shopping_list);
 
                 for(rayon of shopping_list){
                     console.log("LOG RAYON");
