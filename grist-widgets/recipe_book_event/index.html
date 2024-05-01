@@ -15,10 +15,18 @@
       <h4 x-text="nom"></h4>
       <div @click="$dispatch('refresh')">Refresh</div>
     </div>-->
+    portokllg
 
-    <div id="recette"></div>
+    <div style="text-align:center;">
+      <h1 id="nom_evenement" style="font-size:70px; color:#860E4E"></h1>
+      <h3 id="dates_evenement" style="font-size:30px"></h3>
+      <h3 style="font-size:25px">Estimation : <span id="estim_nb_public"></span>personnes</h3>
+      <div id="sommaire" style="font-size:20px; line-height:150%">
+      </div>
+      <div style="page-break-after: always;"></div>
+    </div> 
 
-portokll
+    <div id="all_recettes"></div>
 
       <div class="print">
         <a href="javascript:window.print()">Print</a>

@@ -221,7 +221,7 @@ ready(function(){
                     //html_repas += repas.nom;
                 }
 
-                document.getElementById('recette').innerHTML = html_repas;
+                document.getElementById('all_recettes').innerHTML = html_repas;
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
