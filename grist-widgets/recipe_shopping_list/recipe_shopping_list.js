@@ -158,7 +158,14 @@ ready(function(){
                     console.log(rayon);
                     console.log(shopping_list[rayon]['items'])
 
-                    html_shopping_list += shopping_list[rayon]["nom_du_rayon"]
+                    for(rayon in shopping_list){
+                        html_shopping_list += '<table style="display:inline-block; width:49%; vertical-align:top; margin-bottom:100px;">';
+                        html_shopping_list += '<thead>';
+                        html_shopping_list += '<tr>'
+                        html_shopping_list += '<th colspan="2" style="font-size:20px;">'+shopping_list[rayon]["nom_du_rayon"]+'</th>';
+                        html_shopping_list += '</tr></thead>';
+                        html_shopping_list += '<tbody></tbody>'
+                    }
 
 
 
