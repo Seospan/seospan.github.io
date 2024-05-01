@@ -208,6 +208,7 @@ ready(function(){
 
                 var details_repas = JSON.parse(mapped.details_repas);
                 var sommaire_HTML = "";
+                var compteur_sommaire = 1;
 
                 var html_repas = "";
                 for(repas of details_repas){
@@ -219,7 +220,8 @@ ready(function(){
                     for(recette_contexte of json_details_recettes){
                         console.log("UNE RECETTE");
                         console.log(recette_contexte);
-                        sommaire_HTML += repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
+                        sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
+                        compteur_sommaire++;
                         html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
                     }
                     //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
