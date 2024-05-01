@@ -74,6 +74,10 @@ function handleError(err) {
 
 }*/
 
+function recipeToHTML(){
+    
+}
+
 
 ready(function(){
     console.log("GOGOGO");
