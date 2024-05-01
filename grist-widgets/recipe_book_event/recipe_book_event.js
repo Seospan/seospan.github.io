@@ -138,7 +138,7 @@ ready(function(){
                     console.log("REPAS");
                     console.log(typeof(repas));
                     console.log(repas);
-                    repas_json = JSON.parse(repas);
+                    repas_json = repas;
                     console.log("rrr");
                     console.log(repas_json);
                     html_repas += repas_json.nom;
