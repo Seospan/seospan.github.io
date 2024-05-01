@@ -10,7 +10,7 @@
     <script src="recipe.js"></script>
   </head>
   <body>
-    oo
+    ooi
     <!--<h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>-->
     <!--<div id="alpine" x-data='get_ready()' @refresh="data=data_string">
       <h4 x-text="nom"></h4>
@@ -24,7 +24,18 @@
                 <h4 id="is_vegan"></h4>
                 <h4 id="nb_portions"></h4>
                 <h4 id="multip_recette"></h4>
-            </div>
+          </div>
+
+          <table style="display:inline-block; width:49%; vertical-align:top;">
+            <thead>
+                <tr>
+                    <th colspan="2">Ingredients</th>
+                </tr>
+            </thead>
+            <tbody id="ingredients_table_body">
+                
+            </tbody>
+          </table>
 
             <!--
           <table style="display:inline-block; width:49%; vertical-align:top;">

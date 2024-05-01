@@ -146,12 +146,14 @@ ready(function(){
 
                 document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
 
-                var html_ingredients_list = "<table style="display:inline-block; width:49%; vertical-align:top;"><thead><tr><th colspan="2">Ingredients</th></tr></thead><tbody>";
+                var html_ingredients_list = "";
                 for(ingredient_in_recipe of mapped.ingredients){
                     html_ingredients_list += "<tr>";
                     html_ingredients_list += "<td>" + ingredient_in_recipe.Ingredient.Nom + "</td>";
                     html_ingredients_list += "<td>" + ingredient_in_recipe.Quantite + ingredient_in_recipe.Ingredient.Unite.Abbreviation + "</td>";
                 }
+
+                document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
