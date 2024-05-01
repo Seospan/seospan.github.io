@@ -156,6 +156,7 @@ ready(function(){
                 for(rayon in shopping_list){
                     console.log("LOG RAYON");
                     console.log(rayon);
+                    console.log(shopping_list.rayon)
 
                     //html_shopping_list += rayon_details.Nom
 
