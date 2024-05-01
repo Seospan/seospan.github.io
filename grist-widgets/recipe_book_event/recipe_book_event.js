@@ -134,6 +134,7 @@ function recipeToHTML(nom_evenement, note_contexte_recette, nom_session_cuisine,
 
     html_recette += '<p id="texte_recette" style="white-space: pre-line; font-size : 1.5em; line-height: 150%;">'+recette.Texte+'</p>';
 
+    html_recette += '<div style="break-after:page"></div>';
     return(html_recette);
 }
 
