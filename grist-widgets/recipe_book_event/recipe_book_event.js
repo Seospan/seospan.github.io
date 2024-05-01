@@ -196,9 +196,11 @@ ready(function(){
 
                 var html_repas = "";
                 for(recette_from_repas of details_repas){
-                    console.log("REPAS");
+                    console.log("RECETTE FROM REPAS");
                     console.log(recette_from_repas);
                     var json_details_recettes = JSON.parse(recette_from_repas.details_recettes);
+                    console.log("DETAILS RECETTES");
+                    console.log(json_details_recettes);
                     //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
                     //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
 
