@@ -140,7 +140,7 @@ function recipeToHTML(mapped){
         html_ingredients_list += "<td>" + ingredient_scaled + ingredient_in_recipe.Ingredient.Unite.Abbreviation + "</td>";
     }
     //document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;
-
+    html_recette += html_ingredients_list;
     html_recette += '</tbody>';
     html_recette += '</table>';
 
