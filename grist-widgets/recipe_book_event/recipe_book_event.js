@@ -180,19 +180,6 @@ ready(function(){
         console.log("TESTlyyg");
         //console.log("row " + row);
         //console.log("mappings" + mappings);
-
-        //For PDF
-        const button = document.getElementById('download_button');
-
-        function generatePDF() {
-            // Choose the element that your content will be rendered to.
-            const element = document.getElementById('livret_recette');
-            // Choose the element and save the PDF for your user.
-            html2pdf().from(element).save();
-        }
-
-        button.addEventListener('click', generatePDF);
-        button.addEventListener('click', function(){console.log("OK")});
     
         try {
             if (row === null) {
