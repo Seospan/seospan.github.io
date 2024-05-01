@@ -17,6 +17,9 @@
       <div @click="$dispatch('refresh')">Refresh</div>
     </div>-->
     <button id="download_button">Telecharger en PDF</button>
+    <div class="print">
+        <a href="javascript:printDiv('livret_recette')">Imprimer le livret recettes</a>
+    </div>
 
     <div id="livret_recette">
       <div style="text-align:center;">
@@ -29,11 +32,7 @@
       </div> 
 
       <div id="all_recettes"></div>
-    </div>    
+    </div>
 
-    <!--  <div class="print">
-        <a href="javascript:window.print()">Print</a>
-      </div>-->
-      
     </body>
 </html>
