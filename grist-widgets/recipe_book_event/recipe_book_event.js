@@ -144,7 +144,7 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
     return(html_recette);
 }
 
-const date_options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+const date_options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 ready(function(){
     console.log("GOGOGO");
