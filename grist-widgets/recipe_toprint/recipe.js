@@ -90,11 +90,13 @@ function recipeToHTML(mapped){
 
     html_recette += '<div id="evenement_repas" style="float: left; text-align:left">'+mapped.evenement_lie + " - Repas : " + mapped.repas_lie+'</div>';
     html_recette += '<div id="session_cuisine" style="float: right; text-align:left">'+"[" + mapped.session_cuisine + "]"+'</div>';
+    html_recette += '<div style="clear:both;"></div>';
+    html_recette += '<h2 id="title" style="text-align:center; margin-bottom : 40px; margin-top:50px">'+mapped.recette.Nom+'</h2>'
 
     //document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
     //document.getElementById('session_cuisine').innerHTML = "[" + mapped.session_cuisine + "]";
+    //document.getElementById('title').innerHTML = mapped.recette.Nom;
 
-    document.getElementById('title').innerHTML = mapped.recette.Nom;
     if(mapped.recette.Is_vegetarien){
         document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
     }else{
@@ -121,6 +123,8 @@ function recipeToHTML(mapped){
     }
 
     document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;
+
+    return(recipeToHTML);
 
 }
 
@@ -185,7 +189,7 @@ ready(function(){
             // First check if all columns were mapped.
             if (mapped) {
 
-                recipeToHTML(mapped);
+                document.getElementById('recette').innerHTML(recipeToHTML(mapped));
     
             } else {
                 // Helper returned a null value. It means that not all
