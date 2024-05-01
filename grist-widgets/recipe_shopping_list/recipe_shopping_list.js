@@ -158,7 +158,7 @@ ready(function(){
                     console.log(rayon);
                     console.log(shopping_list[rayon])
 
-                    //html_shopping_list += rayon_details.Nom
+                    html_shopping_list += shopping_list[rayon]["nom_du_rayon"]
 
 
 
