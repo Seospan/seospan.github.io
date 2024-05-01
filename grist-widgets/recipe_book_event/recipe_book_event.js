@@ -135,7 +135,10 @@ ready(function(){
 
                 var html_repas = "";
                 for(repas of details_repas){
-                    repas_json = JSON.parse(repas)
+                    console.log("REPAS");
+                    console.log(typeof(repas));
+                    console.log(repas);
+                    repas_json = JSON.parse(repas);
                     console.log("rrr");
                     console.log(repas_json);
                     html_repas += repas_json.nom;
