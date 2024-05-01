@@ -204,7 +204,7 @@ ready(function(){
                 console.log(mapped.date_debut);
 
                 document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
-                document.getElementById('dates_evenement').innerHTML = mapped.date_debut.toLocaleDateString("fr_FR",date_options) + " - " + mapped.date_fin.toLocaleDateString() ;
+                document.getElementById('dates_evenement').innerHTML = mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " - " + mapped.date_fin.toLocaleDateString() ;
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
                 var details_repas = JSON.parse(mapped.details_repas);
