@@ -126,7 +126,7 @@ ready(function(){
             // First check if all columns were mapped.
             if (mapped) {
                 console.log("MAPPED");
-                console.log(mapped.repas_lies);
+                console.log(mapped.repas_lies_records);
                 console.log(mappings);
 
                 //var data_string = JSON.stringify( mapped.recette);
