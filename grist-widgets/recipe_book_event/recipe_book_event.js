@@ -133,6 +133,8 @@ ready(function(){
 
                 var html_repas = "";
                 for(repas of details_repas){
+                    console.log("rrr");
+                    console.log(repas);
                     html_repas += repas.nom;
                 }
 
