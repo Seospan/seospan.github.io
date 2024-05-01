@@ -176,7 +176,8 @@ ready(function(){
                             console.log("ITEM");
                             console.log(shopping_list_items[item]);
                             html_shopping_list += "<tr>";
-                            html_shopping_list += shopping_list_items[item]['qte_totale']+" "+shopping_list_items[item]['unite'];
+                            html_shopping_list += "<td>"+shopping_list_items[item]['nom']+"</td>";
+                            html_shopping_list += "<td>"+shopping_list_items[item]['qte_totale']+" "+shopping_list_items[item]['unite']+"</td>";
                             html_shopping_list += "</tr>"
                         }
                         html_shopping_list += '</tbody>';
