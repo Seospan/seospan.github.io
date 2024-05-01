@@ -130,7 +130,7 @@ function recipeToHTML(mapped){
 
     document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;
 
-    return(recipeToHTML);
+    return(html_recette);
 
 }
 
