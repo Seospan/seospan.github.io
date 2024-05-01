@@ -187,7 +187,7 @@ ready(function(){
 
         function generatePDF() {
             // Choose the element that your content will be rendered to.
-            const element = document.getElementById('invoice');
+            const element = document.getElementById('livret_recette');
             // Choose the element and save the PDF for your user.
             html2pdf().from(element).save();
         }
