@@ -79,8 +79,28 @@ ready(function(){
     console.log("GOGOGO");
     grist.ready({columns: [
             {
-                name:'evenement',
-                title:'Evenement',
+                name:'repas_lies_records',
+                title:'Détails des repas liés',
+                optional: false,
+            },
+            {
+                name:'date_debut',
+                title:'Date de début',
+                optional: false,
+            },
+            {
+                name:'date_fin',
+                title:'Date de fin',
+                optional: false,
+            },
+            {
+                name:'nom_event',
+                title:'Nom de l\'événement',
+                optional: false,
+            },
+            {
+                name:'taille_public',
+                title:'Taille du public',
                 optional: false,
             },
         ], requiredAccess: 'read table'});
@@ -106,10 +126,10 @@ ready(function(){
             // First check if all columns were mapped.
             if (mapped) {
                 console.log("MAPPED");
-                console.log(mapped.evenement);
+                console.log(mapped.repas_lies);
                 console.log(mappings);
 
-                var data_string = JSON.stringify( mapped.recette);
+                //var data_string = JSON.stringify( mapped.recette);
 
                 /*document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
                 document.getElementById('session_cuisine').innerHTML = "[" + mapped.session_cuisine + "]";
