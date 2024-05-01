@@ -202,7 +202,7 @@ ready(function(){
                     //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
                     //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
 
-                    html_repas += repas.nom;
+                    html_repas += recette_from_repas.nom;
                 }
 
                 document.getElementById('texte_recette').innerHTML = html_repas;
