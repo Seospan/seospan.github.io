@@ -147,7 +147,7 @@ ready(function(){
                 document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
-                var shopping_list = JSON.parse(mapped.shopping_list);
+                var shopping_list = mapped.shopping_list;
 
                 var html_shopping_list = "";
                 for(rayon of shopping_list){
