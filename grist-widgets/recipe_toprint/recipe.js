@@ -82,10 +82,6 @@ function recipeToHTML(mapped){
     console.log(mapped.recette);
     console.log(mapped.ingredients);
 
-    //var data_string = JSON.stringify( mapped.recette);
-    
-    //document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
-
     var html_recette="";
 
     html_recette += '<div id="evenement_repas" style="float: left; text-align:left">'+mapped.evenement_lie + " - Repas : " + mapped.repas_lie+'</div>';
@@ -95,31 +91,21 @@ function recipeToHTML(mapped){
     html_recette += '<div style="width:100%">';
     html_recette += '<div style="display:inline-block; width:49%; vertical-align:top;">';
 
-    //document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
-    //document.getElementById('session_cuisine').innerHTML = "[" + mapped.session_cuisine + "]";
-    //document.getElementById('title').innerHTML = mapped.recette.Nom;
-
     if(mapped.recette.Is_vegetarien){
         html_recette += '<h4 id="is_vege">Vegetarien : <span style="color:green"> ✓ Oui</span></h4>';
-        //document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
     }else{
         html_recette += '<h4 id="is_vege">Vegetarien : <span style="color:red"> ✕ Non</span></h4>';
-        //document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
     }
 
     if(mapped.recette.Is_vegan){
         html_recette += '<h4 id="is_vegan">'+'Vegan : <span style="color:green"> ✓ Oui</span>'+'</h4>';
-        //document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:green"> ✓ Oui</span>';
     }else{
         html_recette += '<h4 id="is_vegan">'+'Vegan : <span style="color:red"> ✕ Non</span>'+'</h4>';
-        //document.getElementById('is_vegan').innerHTML = 'Vegan : <span style="color:red"> ✕ Non</span>';
     }
 
     html_recette += '<h4 id="nb_portions"> Pour : '+mapped.nb_portions+' personnes</h4>';
-    //document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes';
 
     html_recette += '<h4 id="multip_recette"> Représente '+mapped.multip_recette+' x la recette originale</h4>';
-    //document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale';
 
     html_recette += '</div>';
 
@@ -139,17 +125,14 @@ function recipeToHTML(mapped){
         var ingredient_scaled = ingredient_in_recipe.qte_par_personne * mapped.nb_portions;
         html_ingredients_list += "<td>" + ingredient_scaled + ingredient_in_recipe.Ingredient.Unite.Abbreviation + "</td>";
     }
-    //document.getElementById('ingredients_table_body').innerHTML = html_ingredients_list;
+
     html_recette += html_ingredients_list;
     html_recette += '</tbody>';
     html_recette += '</table>';
 
     html_recette += '<p id="texte_recette" style="white-space: pre-line; font-size : 1.5em; line-height: 150%;">'+mapped.recette.Texte+'</p>';
 
-    //document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
-
     return(html_recette);
-
 }
 
 ready(function(){
