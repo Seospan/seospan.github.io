@@ -144,6 +144,8 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
     return(html_recette);
 }
 
+const date_options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+
 
 ready(function(){
     console.log("GOGOGO");
@@ -202,7 +204,7 @@ ready(function(){
                 console.log(mapped.date_debut);
 
                 document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
-                document.getElementById('dates_evenement').innerHTML = mapped.date_debut.toLocaleDateString() + " - " + mapped.date_fin.toLocaleDateString() ;
+                document.getElementById('dates_evenement').innerHTML = mapped.date_debut.toLocaleDateString("fr_FR",date_options) + " - " + mapped.date_fin.toLocaleDateString() ;
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
                 var details_repas = JSON.parse(mapped.details_repas);
