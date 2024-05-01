@@ -193,6 +193,7 @@ ready(function(){
         }
 
         button.addEventListener('click', generatePDF);
+        button.addEventListener('click', function(){console.log("OK")});
     
         try {
             if (row === null) {
