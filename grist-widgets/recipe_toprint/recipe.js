@@ -195,7 +195,7 @@ ready(function(){
             // First check if all columns were mapped.
             if (mapped) {
 
-                document.getElementById('recette').innerHTML("ee");
+                document.getElementById('recette').innerHTML = recipeToHTML(mapped);
     
             } else {
                 // Helper returned a null value. It means that not all
