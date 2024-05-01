@@ -156,9 +156,11 @@ ready(function(){
                 for(rayon in shopping_list){
                     console.log("LOG RAYON");
                     console.log(rayon);
-
-                    var shopping_list_items = JSON.parse(shopping_list[rayon]['items']);
-                    console.log(shopping_list_items)
+                    console.log(typeof(shopping_list[rayon]['items']));
+                    console.log(shopping_list[rayon]['items']);
+                    
+                    //var shopping_list_items = JSON.parse(shopping_list[rayon]['items']);
+                    //console.log(shopping_list_items)
 
                     for(rayon in shopping_list){
                         html_shopping_list += '<table style="display:inline-block; width:49%; vertical-align:top; margin-bottom:100px;">';
@@ -168,9 +170,9 @@ ready(function(){
                         html_shopping_list += '</tr></thead>';
                         html_shopping_list += '<tbody>';
 
-                        for(item in shopping_list_items){
+                        //for(item in shopping_list_items){
 
-                        }
+                        //}
                         html_shopping_list += '</tbody>';
                     }
 
