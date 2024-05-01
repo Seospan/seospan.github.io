@@ -144,7 +144,9 @@ function recipeToHTML(mapped){
     html_recette += '</tbody>';
     html_recette += '</table>';
 
-    document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
+    html_recette += '<p id="texte_recette" style="white-space: pre-line; font-size : 1.5em; line-height: 150%;">'+mapped.recette.Texte+'</p>';
+
+    //document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
 
     return(html_recette);
 
