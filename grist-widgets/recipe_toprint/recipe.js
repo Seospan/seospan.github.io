@@ -79,7 +79,6 @@ function recipeToHTML(mapped){
     console.log("MAPPED");
     console.log(mapped.repas_lie);
     console.log(mapped.evenement_lie);
-    console.log(mappings);
     console.log(mapped.recette);
     console.log(mapped.ingredients);
 
