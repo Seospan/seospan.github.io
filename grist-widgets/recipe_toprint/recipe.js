@@ -91,16 +91,20 @@ function recipeToHTML(mapped){
     html_recette += '<div id="evenement_repas" style="float: left; text-align:left">'+mapped.evenement_lie + " - Repas : " + mapped.repas_lie+'</div>';
     html_recette += '<div id="session_cuisine" style="float: right; text-align:left">'+"[" + mapped.session_cuisine + "]"+'</div>';
     html_recette += '<div style="clear:both;"></div>';
-    html_recette += '<h2 id="title" style="text-align:center; margin-bottom : 40px; margin-top:50px">'+mapped.recette.Nom+'</h2>'
+    html_recette += '<h2 id="title" style="text-align:center; margin-bottom : 40px; margin-top:50px">'+mapped.recette.Nom+'</h2>';
+    html_recette += '<div style="width:100%">';
+    html_recette += '<div style="display:inline-block; width:49%; vertical-align:top;">';
 
     //document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
     //document.getElementById('session_cuisine').innerHTML = "[" + mapped.session_cuisine + "]";
     //document.getElementById('title').innerHTML = mapped.recette.Nom;
 
     if(mapped.recette.Is_vegetarien){
-        document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
+        html_recette += '<h4 id="is_vege">Vegetarien : <span style="color:green"> ✓ Oui</span></h4>';
+        //document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:green"> ✓ Oui</span>';
     }else{
-        document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
+        html_recette += '<h4 id="is_vege">Vegetarien : <span style="color:red"> ✕ Non</span></h4>';
+        //document.getElementById('is_vege').innerHTML = 'Vegetarien : <span style="color:red"> ✕ Non</span>';
     }
 
     if(mapped.recette.Is_vegan){
@@ -111,6 +115,8 @@ function recipeToHTML(mapped){
 
     document.getElementById('nb_portions').innerHTML = ' Pour : '+mapped.nb_portions+' personnes';
     document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale';
+
+    html_recette += '</div>';
 
     document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
 
@@ -189,7 +195,7 @@ ready(function(){
             // First check if all columns were mapped.
             if (mapped) {
 
-                document.getElementById('recette').innerHTML(recipeToHTML(mapped));
+                document.getElementById('recette').innerHTML("ee");
     
             } else {
                 // Helper returned a null value. It means that not all
