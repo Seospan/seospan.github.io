@@ -123,6 +123,7 @@ ready(function(){
                 console.log("MAPPED");
                 console.log(mappings);
                 console.log(mapped.recette);
+                console.log(mapped.ingredients);
 
                 var data_string = JSON.stringify( mapped.recette);
                 
@@ -144,6 +145,11 @@ ready(function(){
                 document.getElementById('multip_recette').innerHTML = ' Représente '+mapped.multip_recette+' x la recette originale';
 
                 document.getElementById('texte_recette').innerHTML = mapped.recette.Texte;
+
+                var html_ingredients_list = "";
+                for(ingredient of mapped.ingredients){
+
+                }
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
