@@ -156,7 +156,7 @@ ready(function(){
                 for(rayon in shopping_list){
                     console.log("LOG RAYON");
                     console.log(rayon);
-                    console.log(shopping_list[rayon])
+                    console.log(shopping_list[rayon]['items'])
 
                     html_shopping_list += shopping_list[rayon]["nom_du_rayon"]
 
