@@ -173,7 +173,11 @@ ready(function(){
                         html_shopping_list += '<tbody>';
 
                         for(item in shopping_list_items){
+                            console.log("ITEM");
+                            console.log(item);
                             html_shopping_list += "<tr>";
+                            //keys = Object.keys(o)
+                            //html_shopping_list += Object.values(item)[0]
                             html_shopping_list += "</tr>"
                         }
                         html_shopping_list += '</tbody>';
