@@ -198,6 +198,8 @@ ready(function(){
                 //console.log("MAPPED");
                 //console.log(mapped.details_repas);
                 //console.log(mappings);
+                console.log("DATE");
+                console.log(mapped.date_debut);
 
                 document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                 document.getElementById('dates_evenement').innerHTML = mapped.date_debut + " - " + mapped.date_fin ;
