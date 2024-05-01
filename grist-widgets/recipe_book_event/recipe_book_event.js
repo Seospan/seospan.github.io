@@ -130,6 +130,8 @@ ready(function(){
                 console.log(mappings);
 
                 var details_repas = Array.from(mapped.details_repas);
+                console.log("ooo");
+                console.log(details_repas);
 
                 var html_repas = "";
                 for(repas of details_repas){
