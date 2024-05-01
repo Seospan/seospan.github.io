@@ -194,8 +194,8 @@ ready(function(){
             const mapped = grist.mapColumnNames(row);
             // First check if all columns were mapped.
             if (mapped) {
-
-                document.getElementById('recette').innerHTML = recipeToHTML(mapped);
+                var html_recipe = recipeToHTML(mapped);
+                document.getElementById('recette').innerHTML = html_recipe;
     
             } else {
                 // Helper returned a null value. It means that not all
