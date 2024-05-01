@@ -201,6 +201,10 @@ ready(function(){
                     var json_details_recettes = JSON.parse(repas.details_recettes);
                     console.log("DETAILS RECETTES");
                     console.log(json_details_recettes);
+                    for(recette_contexte of json_details_recettes){
+                        console.log("UNE RECETTE");
+                        console.log(recette_contexte);
+                    }
                     //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
                     //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
 
