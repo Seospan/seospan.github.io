@@ -129,7 +129,7 @@ ready(function(){
                 console.log(mapped.details_repas);
                 console.log(mappings);
 
-                var details_repas = Array.from(mapped.details_repas);
+                var details_repas = JSON.parse(mapped.details_repas);
                 console.log("ooo");
                 console.log(details_repas);
 
