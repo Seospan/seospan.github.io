@@ -197,7 +197,7 @@ ready(function(){
                 var html_repas = "";
                 for(repas of details_repas){
                     console.log("REPAS");
-                    console.log(repas);
+                    console.log(JSON.parse(repas.details_recette));
                     //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
 
                     html_repas += repas.nom;
