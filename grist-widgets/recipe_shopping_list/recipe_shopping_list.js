@@ -154,13 +154,24 @@ ready(function(){
                     console.log("LOG RAYON");
                     console.log(rayon);
 
+                    html_shopping_list += rayon.Nom
 
+
+
+                    /*var json_details_recettes = JSON.parse(repas.details_recettes);
+                    console.log("DETAILS RECETTES");
+                    console.log(json_details_recettes);
+                    for(recette_contexte of json_details_recettes){
+                        console.log("UNE RECETTE");
+                        console.log(recette_contexte);
+                        html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
+                    }*/
 
 
                 }
 
 
-                document.getElementById('all_recettes').innerHTML = html_repas;
+                document.getElementById('shopping_list').innerHTML = html_shopping_list;
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
