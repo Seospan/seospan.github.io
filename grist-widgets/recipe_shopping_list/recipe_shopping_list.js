@@ -155,11 +155,11 @@ ready(function(){
                 console.log(typeof(shopping_list));
                 console.log(shopping_list);
 
-                for(rayon of shopping_list){
+                for(rayon in shopping_list){
                     console.log("LOG RAYON");
                     console.log(rayon);
-                    //console.log(typeof(shopping_list.rayon.items));
-                    //console.log(shopping_list[rayon]["items"]);
+                    console.log(typeof(shopping_list.rayon));
+                    console.log(shopping_list.rayon);
                     
                     //var shopping_list_items = JSON.parse(shopping_list[rayon]['items']);
                     //console.log(shopping_list_items)
