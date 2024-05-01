@@ -147,7 +147,7 @@ ready(function(){
                 //document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
 
                 document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
-                document.getElementById('session_cuisine').innerHTML = mapped.session_cuisine;
+                document.getElementById('session_cuisine').innerHTML = "[" + mapped.session_cuisine + "]";
 
                 document.getElementById('title').innerHTML = mapped.recette.Nom;
                 if(mapped.recette.Is_vegetarien){
