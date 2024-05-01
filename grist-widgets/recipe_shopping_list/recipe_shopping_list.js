@@ -155,14 +155,6 @@ ready(function(){
                     console.log(rayon);
 
 
-                    var json_details_recettes = JSON.parse(repas.details_recettes);
-                    console.log("DETAILS RECETTES");
-                    console.log(json_details_recettes);
-                    for(recette_contexte of json_details_recettes){
-                        console.log("UNE RECETTE");
-                        console.log(recette_contexte);
-                        html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
-                    }
 
 
                 }
