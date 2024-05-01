@@ -6,4 +6,8 @@
 	.printme  {
 		display: block;
 	}
+
+    body{
+        color: #000;
+    }
 }
