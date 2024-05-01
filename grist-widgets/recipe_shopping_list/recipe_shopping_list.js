@@ -161,7 +161,7 @@ ready(function(){
                     console.log(typeof(shopping_list[rayon]));
                     console.log(shopping_list[rayon]);
                     
-                    //var shopping_list_items = JSON.parse(shopping_list[rayon]['items']);
+                    var shopping_list_items = shopping_list[rayon]['items'];
                     //console.log(shopping_list_items)
 
                     for(rayon in shopping_list){
