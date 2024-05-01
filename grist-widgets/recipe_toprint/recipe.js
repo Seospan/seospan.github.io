@@ -82,12 +82,17 @@ function recipeToHTML(mapped){
     console.log(mapped.recette);
     console.log(mapped.ingredients);
 
-    var data_string = JSON.stringify( mapped.recette);
+    //var data_string = JSON.stringify( mapped.recette);
     
     //document.getElementById('alpine').setAttribute('x-data',JSON.stringify( mapped.recette) );
 
-    document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
-    document.getElementById('session_cuisine').innerHTML = "[" + mapped.session_cuisine + "]";
+    var html_recette="";
+
+    html_recette += '<div id="evenement_repas" style="float: left; text-align:left">'+mapped.evenement_lie + " - Repas : " + mapped.repas_lie+'</div>';
+    html_recette += '<div id="session_cuisine" style="float: right; text-align:left">'+"[" + mapped.session_cuisine + "]"+'</div>';
+
+    //document.getElementById('evenement_repas').innerHTML = mapped.evenement_lie + " - Repas : " + mapped.repas_lie ;
+    //document.getElementById('session_cuisine').innerHTML = "[" + mapped.session_cuisine + "]";
 
     document.getElementById('title').innerHTML = mapped.recette.Nom;
     if(mapped.recette.Is_vegetarien){
