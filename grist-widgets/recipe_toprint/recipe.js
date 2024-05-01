@@ -150,7 +150,7 @@ ready(function(){
                 for(ingredient_in_recipe of mapped.ingredients){
                     html_ingredients_list += "<tr>";
                     html_ingredients_list += "<td>" + ingredient_in_recipe.Ingredient.Nom + "</td>";
-                    var ingredient_scaled = ingredient_in_recipe.Quantite * mapped.nb_portions;
+                    var ingredient_scaled = ingredient_in_recipe.qte_par_personne * mapped.nb_portions;
                     html_ingredients_list += "<td>" + ingredient_scaled + ingredient_in_recipe.Ingredient.Unite.Abbreviation + "</td>";
                 }
 
