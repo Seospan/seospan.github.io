@@ -233,6 +233,8 @@ ready(function(){
 
                 document.getElementById('sommaire').innerHTML = sommaire_HTML;
                 document.getElementById('all_recettes').innerHTML = html_repas;
+
+                document.getElementById('checkboxes_sessions').innerHTML = "blah";
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
