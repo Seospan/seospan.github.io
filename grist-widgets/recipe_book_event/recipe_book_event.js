@@ -145,7 +145,7 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
     return(html_recette);
 }
 
-function generate_recipe_book(){
+function generate_recipe_book(mapped){
     document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                 document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
