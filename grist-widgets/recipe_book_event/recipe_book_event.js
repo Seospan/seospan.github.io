@@ -240,9 +240,11 @@ ready(function(){
                 document.getElementById('all_recettes').innerHTML = html_repas;
 
                 sessions_prepa = mapped.sessions_prepa_liees;
-                console.log("SESSIONS PREPA");
-                console.log(sessions_prepa);
-                document.getElementById('checkboxes_sessions').innerHTML = "blah";
+                checkboxes_sessions_html = "";
+                for(session of sessions_prepa){
+                    checkboxes_sessions_html += '<div><input type="checkbox" class="sessions_choice" id="'+session.id+'" name="sessions_choice" value="'+session.id+'" /> <label for="'+session.id+'">'+session.nom+'</label>';
+                }
+                document.getElementById('checkboxes_sessions').innerHTML = checkboxes_sessions_html;
     
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
