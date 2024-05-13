@@ -175,6 +175,11 @@ ready(function(){
                 title:'Taille du public',
                 optional: false,
             },
+            {
+                name:'sessions_prepa_liees',
+                title:'Sessions de cuisine liées',
+                optional: false,
+            },
         ], requiredAccess: 'read table'});
     grist.onRecord(function (row, mappings){
         console.log("TESTlyyg");
@@ -234,6 +239,9 @@ ready(function(){
                 document.getElementById('sommaire').innerHTML = sommaire_HTML;
                 document.getElementById('all_recettes').innerHTML = html_repas;
 
+                sessions_prepa = mapped.sessions_prepa_liees;
+                console.log("SESSIONS PREPA");
+                console.log(sessions_prepa);
                 document.getElementById('checkboxes_sessions').innerHTML = "blah";
     
     
