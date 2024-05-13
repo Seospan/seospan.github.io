@@ -149,9 +149,14 @@ $( document ).ready(function() {
     
     function generate_recipe_book(mapped){
     
+        sessions_to_include = [];
+
         checked_options = $('#checkboxes_sessions input:checked');
         console.log(checked_options);
-        var sess = document.querySelector('.sessions_choce').checked;
+        checked_options.array.forEach(element => {
+            sessions_to_include.push(element.id)    
+        });
+        console.log(sessions_to_include)
         
         document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                     document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
