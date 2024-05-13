@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+    alert( "ready!" );
+});
+
 function ready(fn) {
     if (document.readyState !== 'loading'){
       console.log("DOC READY")
@@ -146,6 +150,9 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
 }
 
 function generate_recipe_book(mapped){
+
+    var sess = document.querySelector('.sessions_choce').checked;
+    alert(sess);
     
     document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                 document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
@@ -243,9 +250,6 @@ ready(function(){
                 //console.log(mappings);
                 console.log("DATE");
                 console.log(mapped.date_debut);
-
-                var sess = document.querySelector('.sessions_choce').checked;
-                alert(sess);
 
                 document.getElementById("generate_recipe_book").addEventListener("click", () => generate_recipe_book(mapped));
 
