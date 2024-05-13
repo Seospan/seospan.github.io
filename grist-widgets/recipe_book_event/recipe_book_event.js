@@ -151,7 +151,9 @@ $( document ).ready(function() {
     
         sessions_to_include = [];
         $('#checkboxes_sessions input:checked').each(element => {
-            sessions_to_include.push(element)    
+            console.log("TTTT");
+            console.log(element);
+            sessions_to_include.push(element);
         });
         console.log(sessions_to_include)
         
