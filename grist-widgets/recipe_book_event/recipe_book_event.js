@@ -150,10 +150,7 @@ $( document ).ready(function() {
     function generate_recipe_book(mapped){
     
         sessions_to_include = [];
-
-        checked_options = $('#checkboxes_sessions input:checked');
-        console.log(checked_options);
-        checked_options.array.forEach(element => {
+        $('#checkboxes_sessions input:checked').each(element => {
             sessions_to_include.push(element.id)    
         });
         console.log(sessions_to_include)
