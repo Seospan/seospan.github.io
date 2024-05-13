@@ -145,6 +145,39 @@ function recipeToHTML(nom_evenement, recette_contexte, repas_lie){
     return(html_recette);
 }
 
+function generate_recipe_book(){
+    document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
+                document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
+                document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
+
+                var details_repas = JSON.parse(mapped.details_repas);
+                var sommaire_HTML = "";
+                var compteur_sommaire = 1;
+
+                var html_repas = "";
+                for(repas of details_repas){
+                    console.log("RECETTE FROM REPAS");
+                    console.log(repas);
+                    var json_details_recettes = JSON.parse(repas.details_recettes);
+                    console.log("DETAILS RECETTES");
+                    console.log(json_details_recettes);
+                    for(recette_contexte of json_details_recettes){
+                        console.log("UNE RECETTE");
+                        console.log(recette_contexte);
+                        sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
+                        compteur_sommaire++;
+                        html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
+                    }
+                    //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
+                    //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
+                    
+                    //html_repas += repas.nom;
+                }
+
+                document.getElementById('sommaire').innerHTML = sommaire_HTML;
+                document.getElementById('all_recettes').innerHTML = html_repas;
+}
+
 const date_options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 ready(function(){
@@ -181,6 +214,8 @@ ready(function(){
                 optional: false,
             },
         ], requiredAccess: 'read table'});
+
+    
     grist.onRecord(function (row, mappings){
         console.log("TESTlyyg");
         //console.log("row " + row);
@@ -208,36 +243,7 @@ ready(function(){
                 console.log("DATE");
                 console.log(mapped.date_debut);
 
-                document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
-                document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
-                document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
-
-                var details_repas = JSON.parse(mapped.details_repas);
-                var sommaire_HTML = "";
-                var compteur_sommaire = 1;
-
-                var html_repas = "";
-                for(repas of details_repas){
-                    console.log("RECETTE FROM REPAS");
-                    console.log(repas);
-                    var json_details_recettes = JSON.parse(repas.details_recettes);
-                    console.log("DETAILS RECETTES");
-                    console.log(json_details_recettes);
-                    for(recette_contexte of json_details_recettes){
-                        console.log("UNE RECETTE");
-                        console.log(recette_contexte);
-                        sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
-                        compteur_sommaire++;
-                        html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
-                    }
-                    //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
-                    //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
-                    
-                    //html_repas += repas.nom;
-                }
-
-                document.getElementById('sommaire').innerHTML = sommaire_HTML;
-                document.getElementById('all_recettes').innerHTML = html_repas;
+                //generate_recipe_book();
 
                 sessions_prepa = mapped.sessions_prepa_liees;
                 checkboxes_sessions_html = "";
