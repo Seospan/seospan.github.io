@@ -150,7 +150,7 @@ $( document ).ready(function() {
     function generate_recipe_book(mapped){
     
         checked_options = $('#checkboxes_sessions input:checked');
-        consolee.log(checked_options);
+        console.log(checked_options);
         var sess = document.querySelector('.sessions_choce').checked;
         
         document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
