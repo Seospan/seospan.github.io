@@ -5,6 +5,7 @@
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv='pragma' content='no-cache'>
     <title>Recipe</title>
+    <link rel="stylesheet" href="recipe_toprint.css" />
     <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="recipe.js"></script>
@@ -15,7 +16,8 @@
       <h4 x-text="nom"></h4>
       <div @click="$dispatch('refresh')">Refresh</div>
     </div>-->
-      
+    <input type="button" class="no-printme" id="download_button" value="Télécharger la fiche recette" onclick="javascript:window.print()">
+    <div class="printme">
       <div id="recette"></div>
  
       <div id="evenement_repas" style="float: left; text-align:left"></div>
@@ -48,6 +50,6 @@
       <div class="print">
         <a href="javascript:window.print()">Print</a>
       </div>
-      
-    </body>
+    </div>
+  </body>
 </html>
