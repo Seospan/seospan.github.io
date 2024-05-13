@@ -150,7 +150,7 @@ $( document ).ready(function() {
     function generate_recipe_book(mapped){
     
         sessions_to_include = [];
-        $('#checkboxes_sessions input:checked').each(element => {
+        $('[name="sessions_choice"]').each(element => {
             console.log("TTTT");
             console.log(element);
             sessions_to_include.push(element);
