@@ -148,6 +148,7 @@ $( document ).ready(function() {
     }
     
     function generate_recipe_book(mapped){
+        HTMLFormControlsCollection.log("genereate recipe book");
     
         sessions_to_include = [];
         $(':checkbox:checked').each(function(i){
