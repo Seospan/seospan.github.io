@@ -154,7 +154,7 @@ $( document ).ready(function() {
         $(':checkbox:checked').each(function(i){
           sessions_to_include[i] = $(this).val();
         });
-        console.log("sessions");
+        console.log("ids of sessions to include :");
         console.log(sessions_to_include);
         
         document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
@@ -173,8 +173,8 @@ $( document ).ready(function() {
                         //console.log("DETAILS RECETTES");
                         //console.log(json_details_recettes);
                         for(recette_contexte of json_details_recettes){
-                            //console.log("UNE RECETTE");
-                            //console.log(recette_contexte);
+                            console.log("UNE RECETTE");
+                            console.log(recette_contexte);
                             sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
                             compteur_sommaire++;
                             html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
