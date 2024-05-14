@@ -155,8 +155,7 @@ $( document ).ready(function() {
 
             console.log("TTTT");
             console.log($this.is(":checked"));
-            console.log($this.val());
-            sessions_to_include.push(element);
+            sessions_to_include.push($(this));
         });
         console.log(sessions_to_include)
         
