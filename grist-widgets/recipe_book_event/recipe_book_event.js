@@ -150,15 +150,11 @@ $( document ).ready(function() {
     function generate_recipe_book(mapped){
     
         sessions_to_include = [];
-        $('[name="sessions_choice"]').each(() => {
-            var $this = $(this)
-
-            console.log("TTTT");
-            console.log($this.is(":checked"));
-            console.log($this);
-            sessions_to_include.push($this);
+        $(':checkbox:checked').each(function(i){
+          sessions_to_include[i] = $(this).val();
         });
-        console.log(sessions_to_include)
+        console.log("sessions");
+        console.log(sessions_to_include);
         
         document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                     document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
@@ -170,14 +166,14 @@ $( document ).ready(function() {
     
                     var html_repas = "";
                     for(repas of details_repas){
-                        console.log("RECETTE FROM REPAS");
-                        console.log(repas);
+                        //console.log("RECETTE FROM REPAS");
+                        //console.log(repas);
                         var json_details_recettes = JSON.parse(repas.details_recettes);
-                        console.log("DETAILS RECETTES");
-                        console.log(json_details_recettes);
+                        //console.log("DETAILS RECETTES");
+                        //console.log(json_details_recettes);
                         for(recette_contexte of json_details_recettes){
-                            console.log("UNE RECETTE");
-                            console.log(recette_contexte);
+                            //console.log("UNE RECETTE");
+                            //console.log(recette_contexte);
                             sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
                             compteur_sommaire++;
                             html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
@@ -195,7 +191,7 @@ $( document ).ready(function() {
     const date_options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     
     ready(function(){
-        console.log("GOGOGO");
+        //console.log("GOGOGO");
         grist.ready({columns: [
                 {
                     name:'details_repas',
@@ -231,7 +227,6 @@ $( document ).ready(function() {
     
         
         grist.onRecord(function (row, mappings){
-            console.log("TESTlyyg");
             //console.log("row " + row);
             //console.log("mappings" + mappings);
         
@@ -239,7 +234,7 @@ $( document ).ready(function() {
                 if (row === null) {
                     throw new Error("(No data - not on row - please add or select a row)");
                 }
-                console.log("GOT...", JSON.stringify(row));
+                //console.log("GOT...", JSON.stringify(row));
                 if (row.References) {
                     try {
                     Object.assign(row, row.References);
@@ -254,8 +249,8 @@ $( document ).ready(function() {
                     //console.log("MAPPED");
                     //console.log(mapped.details_repas);
                     //console.log(mappings);
-                    console.log("DATE");
-                    console.log(mapped.date_debut);
+                    //console.log("DATE");
+                    //console.log(mapped.date_debut);
     
                     document.getElementById("generate_recipe_book").addEventListener("click", () => generate_recipe_book(mapped));
     
