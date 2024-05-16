@@ -48,6 +48,11 @@ ready(function(){
                 title:'Taille du public',
                 optional: false,
             },
+            {
+                name:'sessions_prepa_liees',
+                title:'Sessions de cuisine liées',
+                optional: false,
+            },
         ], requiredAccess: 'read table'});
     grist.onRecord(function (row, mappings){
         //console.log("row " + row);
