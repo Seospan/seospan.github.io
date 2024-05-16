@@ -91,6 +91,8 @@ $( document ).ready(function() {
 
     function filter_by_checkboxes(details_ingredients_evenement, sessions_to_include, include_on_site_recipes){
 
+        var details_ingredients_evenement = details_ingredients_evenement;
+
         console.log("ids of sessions to include :");
         console.log(sessions_to_include);
         console.log('take on site recipes :'+include_on_site_recipes);
@@ -109,6 +111,8 @@ $( document ).ready(function() {
                 }
             }
         }
+
+        return details_ingredients_evenement;
     
     }
 
