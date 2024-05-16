@@ -215,6 +215,18 @@ ready(function(){
                 // -------------------------------------
                 
                 document.getElementById("generate_shopping_list").addEventListener("click", () => generate_shopping_list_HTML(mapped.details_ingredients));
+
+                //Add checkboxes to choose which cooking session(s) to include, and if "no-cooking-session" (== cookes on event) are included
+                sessions_prepa = mapped.sessions_prepa_liees;
+                checkboxes_sessions_html = "";
+                for(session of sessions_prepa){
+                    checkboxes_sessions_html += '<div><input type="checkbox" class="sessions_choice" id="'+session.id+'" name="sessions_choice" value="'+session.id+'" /> <label for="'+session.id+'">'+session.nom+'</label>';
+                }
+                document.getElementById('checkboxes_sessions').innerHTML = checkboxes_sessions_html;
+                
+                //Add a checkbox for taking recipes with no prepa session (==recipes done on site)
+                document.getElementById('checkbox_on_site').innerHTML = '<div><input type="checkbox" class="no_prepa_recipes" id="no_prepa_recipes" name="no_prepa_recipes" value="no_prepa_recipes" /> <label for="no_prepa_recipes"> Recettes préparées sur site </label>';
+    
                 
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
