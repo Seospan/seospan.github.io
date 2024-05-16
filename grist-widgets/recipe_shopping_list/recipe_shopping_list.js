@@ -39,13 +39,13 @@ function calculate_shopping_list(details_ingredients_evenement){
     console.log(details_ingredients_evenement)
     var ingredients_a_acheter = {}
 
-    for(repas in details_ingredients_evenement){
+    for(repas of details_ingredients_evenement){
         console.log("Entering repas");
         console.log(repas)
-        for(recette in details_ingredients_evenement[repas]){
+        for(recette of repas){
             console.log("Entering recette");
             console.log(details_ingredients_evenement[repas][recette]);
-            for(ingredient_from_recette in details_ingredients_evenement[repas][recette].ingredients){
+            for(ingredient_from_recette of recette.ingredients){
                 console.log("Entering ingredient");
                 nom_ing = ingredient_from_recette.nom;
                 id_ing = ingredient_from_recette.id;
