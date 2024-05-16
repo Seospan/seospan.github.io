@@ -196,8 +196,8 @@ ready(function(){
 
                 //var shopping_list = calculate_shopping_list();
 
-                //console.log("INGREDIENTS LIST");
-                //console.log(mapped.details_ingredients);
+                console.log("INGREDIENTS LIST");
+                console.log(mapped.details_ingredients);
                 // -------------------------------------
                 //var shopping_list = mapped.shopping_list;
                 // -------------------------------------
