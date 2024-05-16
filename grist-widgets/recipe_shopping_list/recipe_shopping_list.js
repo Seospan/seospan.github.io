@@ -101,9 +101,9 @@ $( document ).ready(function() {
                     || (!recette.prepare_avant && include_on_site_recipes)
                 )
                 {
-                    console.log("including "+recette_contexte.details_recette.Nom);
+                    console.log("including "+recette.nom);
                 }else {
-                    console.log("NOT including "+recette_contexte.details_recette.Nom);
+                    console.log("NOT including "+recette.nom);
                     index = repas.indexOf(recette);
                     repas = repas.splice(index,1);
                 }
