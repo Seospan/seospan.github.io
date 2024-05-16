@@ -13,9 +13,72 @@ function handleError(err) {
     console.log("ERROR");
 }
 
-function calculate_shopping_list(details_ingredients){
-    var shopping_list = {}
-    return shopping_list;
+/*
+Takes as parameter an array :
+[ //evenement : array of repas
+    [ //repas : array of recettes
+        { //recette
+            "nom": "Gnocchis courgettes",
+			"prepare_avant": false,
+			"id_session_cuisine": 0,
+            "ingredients": [ //array of ingredients
+				{
+					"id": integer
+					"nom": string,
+					"qte_ing": float,
+					"unite": string (abbreviation),
+					"rayon": string
+				},
+        }
+    ]
+]
+ */
+function calculate_shopping_list(details_ingredients_evenement){
+    var ingredients_a_acheter = {}
+
+    for(repas in details_ingredients_evenement){
+        for(recette in repas){
+            for(ingredient_from_recette in repas.ingredients){
+                nom_ing = ingredient_from_recette.nom;
+                id_ing = ingredient_from_recette.id;
+                qte_totale = ingredient_from_recette.qte_ing_totale;
+                unite = ingredient_from_recette.unite;
+
+                //Define rayon or generic label if no rayon
+                if(ingredient_from_recette.rayon){
+                    rayon = ingredient_from_recette['Ingredient']['Rayon']['nom_du_rayon'];
+                }
+                else{
+                    rayon = "Sans rayon";
+                }
+
+                //If rayon does not exist, create it
+                if( !(rayon in ingredients_a_acheter)){
+                    ingredients_a_acheter[rayon] = {
+                        "nom_du_rayon" : rayon,
+                        "items" : {}
+                    }
+                }
+
+                if( !(id_ing in ingredients_a_acheter[rayon]["items"])){
+                    ingredients_contexte = {
+                        "id" : id_ing,
+                        "nom" : nom_ing,
+                        "qte_totale" : qte_totale,
+                        "unite" : unite,
+                        "rayon" : rayon
+                        }
+                    ingredients_a_acheter[rayon]["items"][id_ing] = ingredients_contexte;
+                }
+                else{
+                    ingredients_a_acheter[rayon]["items"][id_ing]['qte_totale'] += qte_totale;
+                }
+                
+            }
+        }
+    }
+
+    return ingredients_a_acheter;
 }
 
 function generate_shopping_list_HTML(shopping_list){
