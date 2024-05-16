@@ -94,7 +94,7 @@ $( document ).ready(function() {
         html_recette += '<div id="evenement_repas" style="float: left; text-align:left">'+nom_evenement +" - " + repas.date + " - Repas : " + repas_lie.nom+'</div>';
         html_recette += '<div id="session_cuisine" style="float: right; text-align:left">'+"Prépa : [" + nom_session_cuisine + "]"+'</div>';
         html_recette += '<div style="clear:both;"></div>';
-        html_recette += '<h2 id="title" style="text-align:left; margin-bottom : 40px; margin-top:50px">'+recette.Nom+'</h2>';
+        html_recette += '<h2 id="title" style="text-align:center; margin-bottom : 40px; margin-top:50px">'+recette.Nom+'</h2>';
         html_recette += '<div style="width:100%">';
         html_recette += '<div style="display:inline-block; width:49%; vertical-align:top;">';
     
@@ -165,7 +165,7 @@ $( document ).ready(function() {
                     document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
     
                     var details_repas = JSON.parse(mapped.details_repas);
-                    var sommaire_HTML = "";
+                    var sommaire_HTML = "<div id='sommaire' style='text-align:left'>";
                     var compteur_sommaire = 1;
     
                     var html_repas = "";
@@ -205,6 +205,7 @@ $( document ).ready(function() {
                         
                         //html_repas += repas.nom;
                     }
+                    var sommaire_HTML = "</div>";
     
                     document.getElementById('sommaire').innerHTML = sommaire_HTML;
                     document.getElementById('all_recettes').innerHTML = html_repas;
