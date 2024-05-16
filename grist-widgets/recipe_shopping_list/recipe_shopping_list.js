@@ -37,7 +37,7 @@ $( document ).ready(function() {
     */
     function calculate_shopping_list(details_ingredients_evenement, sessions_to_include, include_on_site_recipes){
 
-        //details_ingredients_evenement = filter_by_checkboxes(details_ingredients_evenement, sessions_to_include, include_on_site_recipes)
+        details_ingredients_evenement = filter_by_checkboxes(details_ingredients_evenement, sessions_to_include, include_on_site_recipes)
 
         var ingredients_a_acheter = {}
 
