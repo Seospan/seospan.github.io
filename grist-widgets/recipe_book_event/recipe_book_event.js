@@ -151,7 +151,7 @@ $( document ).ready(function() {
         console.log("genereate recipe book");
     
         sessions_to_include = [];
-        $('checkboxes_sessions :checkbox:checked').each(function(i){
+        $('#checkboxes_sessions :checkbox:checked').each(function(i){
           sessions_to_include[i] = $(this).val();
         });
         console.log("ids of sessions to include :");
