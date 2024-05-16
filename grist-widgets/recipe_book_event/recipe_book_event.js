@@ -158,7 +158,7 @@ $( document ).ready(function() {
 
         console.log("ids of sessions to include :");
         console.log(sessions_to_include);
-        console.log('take on site recipes :'+on_site_recipes);
+        console.log('take on site recipes :'+include_on_site_recipes);
         
         document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                     document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
@@ -178,6 +178,10 @@ $( document ).ready(function() {
                         for(recette_contexte of json_details_recettes){
                             //console.log("UNE RECETTE");
                             //console.log(recette_contexte);
+
+                            /* Si la recette est notée comme préparée à l'avance, vérifier que la session de prepa est comprise dans les recettes demandées
+                            Si la recette n'est pas notée comme préparée à l'avance, vérifier que les recettes préparées sur site sont demandées
+                             */
                             if(recette_contexte.prepare_avant && sessions_to_include.includes(recette_contexte.id_session_cuisine)
                                 || !recette_contexte.prepare_avant && include_on_site_recipes
                             )
