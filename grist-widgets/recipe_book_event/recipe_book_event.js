@@ -165,7 +165,7 @@ $( document ).ready(function() {
                     document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
     
                     var details_repas = JSON.parse(mapped.details_repas);
-                    var sommaire_HTML = "<div id='sommaire' style='text-align:left'>";
+                    var sommaire_HTML = "";
                     var compteur_sommaire = 1;
     
                     var html_repas = "";
@@ -205,7 +205,6 @@ $( document ).ready(function() {
                         
                         //html_repas += repas.nom;
                     }
-                    sommaire_HTML += "</div>";
     
                     document.getElementById('sommaire').innerHTML = sommaire_HTML;
                     document.getElementById('all_recettes').innerHTML = html_repas;
