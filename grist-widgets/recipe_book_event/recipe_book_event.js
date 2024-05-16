@@ -276,9 +276,8 @@ $( document ).ready(function() {
                     //console.log(mapped.date_debut);
     
                     document.getElementById("generate_recipe_book").addEventListener("click", () => generate_recipe_book(mapped));
-    
-                    //generate_recipe_book();
-    
+               
+                    //Add checkboxes to choose which cooking session(s) to include, and if "no-cooking-session" (== cookes on event) are included
                     sessions_prepa = mapped.sessions_prepa_liees;
                     checkboxes_sessions_html = "";
                     for(session of sessions_prepa){

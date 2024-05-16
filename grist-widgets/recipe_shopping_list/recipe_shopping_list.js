@@ -18,6 +18,48 @@ function calculate_shopping_list(details_ingredients){
     return shopping_list;
 }
 
+function generate_shopping_list_HTML(shopping_list){
+    console.log("SHOPPING LIST");
+
+    var html_shopping_list = "";
+    //shopping_list = JSON.parse(shopping_list);
+    console.log(typeof(shopping_list));
+    console.log(shopping_list);
+
+    for(rayon in shopping_list){
+        console.log("LOG RAYON");
+        console.log(rayon);
+        console.log(typeof(shopping_list[rayon]));
+        console.log(shopping_list[rayon]);
+        
+        //console.log(shopping_list_items)
+
+        html_shopping_list += '<table style="display:inline-block; width:49%; vertical-align:top; margin-bottom:100px;">';
+        html_shopping_list += '<thead>';
+        html_shopping_list += '<tr>'
+        html_shopping_list += '<th colspan="2" style="font-size:20px;">'+shopping_list[rayon]["nom_du_rayon"]+'</th>';
+        html_shopping_list += '</tr></thead>';
+        html_shopping_list += '<tbody>';
+
+        var shopping_list_items = shopping_list[rayon]['items'];
+
+        for(item in shopping_list_items){
+            console.log("ITEM");
+            console.log(shopping_list_items[item]);
+            html_shopping_list += "<tr>";
+            html_shopping_list += "<td>"+shopping_list_items[item]['nom']+"</td>";
+            html_shopping_list += "<td>"+shopping_list_items[item]['qte_totale']+" "+shopping_list_items[item]['unite']+"</td>";
+            html_shopping_list += "</tr>"
+        }
+        html_shopping_list += '</tbody>';
+    }
+
+    alert("TTT");
+
+    document.getElementById('shopping_list').innerHTML = html_shopping_list;
+    
+}
+
 const date_options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 ready(function(){
@@ -90,46 +132,9 @@ ready(function(){
                 // -------------------------------------
                 //var shopping_list = mapped.shopping_list;
                 // -------------------------------------
-                console.log("SHOPPING LIST");
-
-                var html_shopping_list = "";
-                //shopping_list = JSON.parse(shopping_list);
-                console.log(typeof(shopping_list));
-                console.log(shopping_list);
-
-                for(rayon in shopping_list){
-                    console.log("LOG RAYON");
-                    console.log(rayon);
-                    console.log(typeof(shopping_list[rayon]));
-                    console.log(shopping_list[rayon]);
-                    
-                    //console.log(shopping_list_items)
-
-                    html_shopping_list += '<table style="display:inline-block; width:49%; vertical-align:top; margin-bottom:100px;">';
-                    html_shopping_list += '<thead>';
-                    html_shopping_list += '<tr>'
-                    html_shopping_list += '<th colspan="2" style="font-size:20px;">'+shopping_list[rayon]["nom_du_rayon"]+'</th>';
-                    html_shopping_list += '</tr></thead>';
-                    html_shopping_list += '<tbody>';
-
-                    var shopping_list_items = shopping_list[rayon]['items'];
-
-                    for(item in shopping_list_items){
-                        console.log("ITEM");
-                        console.log(shopping_list_items[item]);
-                        html_shopping_list += "<tr>";
-                        html_shopping_list += "<td>"+shopping_list_items[item]['nom']+"</td>";
-                        html_shopping_list += "<td>"+shopping_list_items[item]['qte_totale']+" "+shopping_list_items[item]['unite']+"</td>";
-                        html_shopping_list += "</tr>"
-                    }
-                    html_shopping_list += '</tbody>';
-
-
-                }
-
-
-                document.getElementById('shopping_list').innerHTML = html_shopping_list;
-    
+                
+                document.getElementById("generate_shopping_list").addEventListener("click", () => generate_shopping_list_HTML(shopping_list));
+                
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
             } else {
