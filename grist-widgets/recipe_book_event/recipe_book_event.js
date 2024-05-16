@@ -182,10 +182,14 @@ $( document ).ready(function() {
                             /* Si la recette est notée comme préparée à l'avance, vérifier que la session de prepa est comprise dans les recettes demandées
                             Si la recette n'est pas notée comme préparée à l'avance, vérifier que les recettes préparées sur site sont demandées
                              */
-                            if(recette_contexte.prepare_avant && sessions_to_include.includes(recette_contexte.id_session_cuisine)
-                                || !recette_contexte.prepare_avant && include_on_site_recipes
+                            if((recette_contexte.prepare_avant && sessions_to_include.includes(recette_contexte.id_session_cuisine))
+                                || (!recette_contexte.prepare_avant && include_on_site_recipes)
                             )
                             {
+                                console.log("id / sessions to include / test");
+                                console.log(recette_contexte.id_session_cuisine);
+                                console.log(sessions_to_include);
+                                console.log(sessions_to_include.includes(recette_contexte.id_session_cuisine));
                                 console.log("including "+recette_contexte.details_recette.Nom);
                                 sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
                                 compteur_sommaire++;
