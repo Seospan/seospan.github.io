@@ -77,7 +77,8 @@ function calculate_shopping_list(details_ingredients_evenement){
             }
         }
     }
-
+    console.log("DONE GENERATING INGREDIENTS LIST");
+    console.log(ingredients_a_acheter);
     return ingredients_a_acheter;
 }
 
