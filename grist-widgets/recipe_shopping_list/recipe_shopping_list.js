@@ -42,7 +42,7 @@ function calculate_shopping_list(details_ingredients_evenement){
     for(repas of details_ingredients_evenement){
         console.log("Entering repas");
         console.log(repas)
-        for(recette of repas){
+        for(recette of details_ingredients_evenement[repas]){
             console.log("Entering recette");
             console.log(recette);
             for(ingredient_from_recette of recette.ingredients){
