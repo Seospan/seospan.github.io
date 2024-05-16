@@ -35,16 +35,10 @@ Takes as parameter an array :
  */
 function calculate_shopping_list(details_ingredients_evenement){
 
-    console.log("Entering calculate_shopping_list");
-    console.log(details_ingredients_evenement)
     var ingredients_a_acheter = {}
 
     for(repas of details_ingredients_evenement){
-        console.log("Entering repas");
-        console.log(repas)
         for(recette of repas){
-            console.log("Entering recette");
-            console.log(recette);
             for(ingredient_from_recette of recette.ingredients){
                 console.log("Entering ingredient");
                 nom_ing = ingredient_from_recette.nom;
@@ -59,7 +53,6 @@ function calculate_shopping_list(details_ingredients_evenement){
                 else{
                     rayon = "Sans rayon";
                 }
-                console.log("Rayon :"+rayon);
 
                 //If rayon does not exist, create it
                 if( !(rayon in ingredients_a_acheter)){
@@ -86,8 +79,6 @@ function calculate_shopping_list(details_ingredients_evenement){
             }
         }
     }
-    console.log("DONE GENERATING INGREDIENTS LIST");
-    console.log(ingredients_a_acheter);
     return ingredients_a_acheter;
 }
 
@@ -95,23 +86,12 @@ function generate_shopping_list_HTML(mapped_ingredients){
 
     var mapped_ingredients = JSON.parse(mapped_ingredients);
 
-    console.log("received ingredients in generate_html :")
-    console.log(mapped_ingredients)
-
     shopping_list = calculate_shopping_list(mapped_ingredients);
-
-    console.log("SHOPPING LIST");
 
     var html_shopping_list = "";
     //shopping_list = JSON.parse(shopping_list);
-    console.log(typeof(shopping_list));
-    console.log(shopping_list);
 
     for(rayon in shopping_list){
-        console.log("LOG RAYON");
-        console.log(rayon);
-        console.log(typeof(shopping_list[rayon]));
-        console.log(shopping_list[rayon]);
         
         //console.log(shopping_list_items)
 
@@ -125,8 +105,6 @@ function generate_shopping_list_HTML(mapped_ingredients){
         var shopping_list_items = shopping_list[rayon]['items'];
 
         for(item in shopping_list_items){
-            console.log("ITEM");
-            console.log(shopping_list_items[item]);
             html_shopping_list += "<tr>";
             html_shopping_list += "<td>"+shopping_list_items[item]['nom']+"</td>";
             html_shopping_list += "<td>"+shopping_list_items[item]['qte_totale']+" "+shopping_list_items[item]['unite']+"</td>";
@@ -198,22 +176,11 @@ ready(function(){
                 //console.log("MAPPED");
                 //console.log(mapped.details_repas);
                 //console.log(mappings);
-                console.log("DATE");
-                console.log(mapped.date_debut);
 
                 document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                 document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
-
-                //var shopping_list = calculate_shopping_list();
-
-                console.log("INGREDIENTS LIST");
-                console.log(mapped.details_ingredients);
-                // -------------------------------------
-                //var shopping_list = mapped.shopping_list;
-                // -------------------------------------
-                
                 document.getElementById("generate_shopping_list").addEventListener("click", () => generate_shopping_list_HTML(mapped.details_ingredients));
 
                 //Add checkboxes to choose which cooking session(s) to include, and if "no-cooking-session" (== cookes on event) are included
