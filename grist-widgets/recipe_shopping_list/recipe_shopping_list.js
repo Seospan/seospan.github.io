@@ -190,7 +190,7 @@ ready(function(){
 
                 var shopping_list = calculate_shopping_list(mapped.details_ingredients);
 
-                console.log("SHOPPING LIST");
+                console.log("INGREDIENTS LIST");
                 console.log(mapped.details_ingredients);
                 // -------------------------------------
                 //var shopping_list = mapped.shopping_list;
