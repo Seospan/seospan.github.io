@@ -173,8 +173,8 @@ $( document ).ready(function() {
                         //console.log("DETAILS RECETTES");
                         //console.log(json_details_recettes);
                         for(recette_contexte of json_details_recettes){
-                            console.log("UNE RECETTE");
-                            console.log(recette_contexte);
+                            //console.log("UNE RECETTE");
+                            //console.log(recette_contexte);
                             sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
                             compteur_sommaire++;
                             html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
