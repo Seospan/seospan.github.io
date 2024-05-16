@@ -33,9 +33,9 @@ Takes as parameter an array :
     ]
 ]
  */
-function calculate_shopping_list(details_ingredients_evenement){
+function calculate_shopping_list(details_ingredients_evenement, sessions_to_include, include_on_site_recipes){
 
-    details_ingredients_evenement = filter_by_checkboxes(details_ingredients_evenement)
+    details_ingredients_evenement = filter_by_checkboxes(details_ingredients_evenement, sessions_to_include, include_on_site_recipes)
 
     var ingredients_a_acheter = {}
 
@@ -87,13 +87,7 @@ function calculate_shopping_list(details_ingredients_evenement){
     return ingredients_a_acheter;
 }
 
-function filter_by_checkboxes(details_ingredients_evenement){
-
-    sessions_to_include = [];
-    $('#checkboxes_sessions :checkbox:checked').each(function(i){
-      sessions_to_include[i] = $(this).val();
-    });
-    include_on_site_recipes = $('#no_prepa_recipes').is(":checked");
+function filter_by_checkboxes(details_ingredients_evenement, sessions_to_include, include_on_site_recipes){
 
     console.log("ids of sessions to include :");
     console.log(sessions_to_include);
@@ -116,11 +110,11 @@ function filter_by_checkboxes(details_ingredients_evenement){
   
 }
 
-function generate_shopping_list_HTML(mapped_ingredients){
+function generate_shopping_list_HTML(mapped_ingredients, sessions_to_include, include_on_site_recipes){
 
     var mapped_ingredients = JSON.parse(mapped_ingredients);
 
-    shopping_list = calculate_shopping_list(mapped_ingredients);
+    shopping_list = calculate_shopping_list(mapped_ingredients, sessions_to_include, include_on_site_recipes);
 
     var html_shopping_list = "";
     //shopping_list = JSON.parse(shopping_list);
@@ -215,7 +209,15 @@ ready(function(){
                 document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
-                document.getElementById("generate_shopping_list").addEventListener("click", () => generate_shopping_list_HTML(mapped.details_ingredients));
+                //Get filtering specificities
+                sessions_to_include = [];
+                $('#checkboxes_sessions :checkbox:checked').each(function(i){
+                sessions_to_include[i] = $(this).val();
+                });
+                include_on_site_recipes = $('#no_prepa_recipes').is(":checked");
+
+
+                document.getElementById("generate_shopping_list").addEventListener("click", () => generate_shopping_list_HTML(mapped.details_ingredients, sessions_to_include, include_on_site_recipes));
 
                 //Add checkboxes to choose which cooking session(s) to include, and if "no-cooking-session" (== cookes on event) are included
                 sessions_prepa = mapped.sessions_prepa_liees;
