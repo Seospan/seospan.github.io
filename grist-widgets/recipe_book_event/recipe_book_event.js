@@ -205,7 +205,7 @@ $( document ).ready(function() {
                         
                         //html_repas += repas.nom;
                     }
-                    var sommaire_HTML = "</div>";
+                    sommaire_HTML += "</div>";
     
                     document.getElementById('sommaire').innerHTML = sommaire_HTML;
                     document.getElementById('all_recettes').innerHTML = html_repas;
