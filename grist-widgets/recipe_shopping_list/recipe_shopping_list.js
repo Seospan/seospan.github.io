@@ -86,7 +86,7 @@ function calculate_shopping_list(details_ingredients_evenement){
 
 function generate_shopping_list_HTML(mapped_ingredients){
 
-    shopping_list = calculate_shopping_list(details_ingredients_evenement);
+    shopping_list = calculate_shopping_list(mapped_ingredients);
 
     console.log("SHOPPING LIST");
 
