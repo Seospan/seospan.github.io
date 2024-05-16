@@ -151,11 +151,12 @@ $( document ).ready(function() {
         console.log("genereate recipe book");
     
         sessions_to_include = [];
-        $(':checkbox:checked').each(function(i){
+        $('checkboxes_sessions :checkbox:checked').each(function(i){
           sessions_to_include[i] = $(this).val();
         });
         console.log("ids of sessions to include :");
         console.log(sessions_to_include);
+        //console.log('take on site recipe :'$(':checkbox:checked')checkbox_on_site);
         
         document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                     document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
