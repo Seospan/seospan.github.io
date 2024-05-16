@@ -85,7 +85,7 @@ function generate_shopping_list_HTML(shopping_list){
     console.log("SHOPPING LIST");
 
     var html_shopping_list = "";
-    //shopping_list = JSON.parse(shopping_list);
+    shopping_list = JSON.parse(shopping_list);
     console.log(typeof(shopping_list));
     console.log(shopping_list);
 
@@ -191,7 +191,7 @@ ready(function(){
                 var shopping_list = calculate_shopping_list(mapped.details_ingredients);
 
                 console.log("SHOPPING LIST");
-                console.log(shopping_list);
+                console.log(mapped.details_ingredients);
                 // -------------------------------------
                 //var shopping_list = mapped.shopping_list;
                 // -------------------------------------
