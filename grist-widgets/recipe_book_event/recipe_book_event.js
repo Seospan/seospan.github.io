@@ -181,12 +181,12 @@ $( document ).ready(function() {
                             if(recette_contexte.prepare_avant && sessions_to_include.includes(recette_contexte.id_session_cuisine)
                                 || !recette_contexte.prepare_avant && include_on_site_recipes
                             )
-                            ){
+                            {
                                 console.log("including "+recette_contexte.details_recette.Nom);
                                 sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
                                 compteur_sommaire++;
                                 html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
-                            }else{
+                            }else {
                                 console.log("NOT including "+recette_contexte.details_recette.Nom);
                             }
                             
