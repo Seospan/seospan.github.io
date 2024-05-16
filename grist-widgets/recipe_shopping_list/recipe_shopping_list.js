@@ -97,8 +97,8 @@ $( document ).ready(function() {
         console.log(sessions_to_include);
         console.log('take on site recipes :'+include_on_site_recipes);
 
-        for(repas of details_ingredients_evenement){
-            repas.map((recette) => {
+        for(const [i, repas] of details_ingredients_evenement.entries()){
+            for(recette of repas){
                 if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
                     || (!recette.prepare_avant && include_on_site_recipes)
                 )
@@ -107,20 +107,9 @@ $( document ).ready(function() {
                 }else {
                     console.log("NOT including "+recette.nom);
                     index = repas.indexOf(recette);
-                    repas = repas.splice(index,1);
-            })
-            /*for(recette of repas){
-                if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
-                    || (!recette.prepare_avant && include_on_site_recipes)
-                )
-                {
-                    console.log("including "+recette.nom);
-                }else {
-                    console.log("NOT including "+recette.nom);
-                    index = repas.indexOf(recette);
-                    repas = repas.splice(index,1);
+                    details_ingredients_evenement[i] = repas.splice(index,1);
                 }
-            }*/
+            }
         }
 
         return details_ingredients_evenement;
