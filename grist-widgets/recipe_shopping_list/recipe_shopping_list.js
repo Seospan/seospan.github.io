@@ -98,7 +98,18 @@ $( document ).ready(function() {
         console.log('take on site recipes :'+include_on_site_recipes);
 
         for(repas of details_ingredients_evenement){
-            for(recette of repas){
+            repas.map((recette) => {
+                if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
+                    || (!recette.prepare_avant && include_on_site_recipes)
+                )
+                {
+                    console.log("including "+recette.nom);
+                }else {
+                    console.log("NOT including "+recette.nom);
+                    index = repas.indexOf(recette);
+                    repas = repas.splice(index,1);
+            })
+            /*for(recette of repas){
                 if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
                     || (!recette.prepare_avant && include_on_site_recipes)
                 )
@@ -109,7 +120,7 @@ $( document ).ready(function() {
                     index = repas.indexOf(recette);
                     repas = repas.splice(index,1);
                 }
-            }
+            }*/
         }
 
         return details_ingredients_evenement;
