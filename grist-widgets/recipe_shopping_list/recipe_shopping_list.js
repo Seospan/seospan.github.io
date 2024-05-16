@@ -54,9 +54,8 @@ function generate_shopping_list_HTML(shopping_list){
         html_shopping_list += '</tbody>';
     }
 
-    alert("TTT");
-
     document.getElementById('shopping_list').innerHTML = html_shopping_list;
+    document.getElementById('shopping_list').innerHTML = "BLAH";
     
 }
 
