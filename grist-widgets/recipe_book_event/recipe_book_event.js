@@ -176,8 +176,8 @@ $( document ).ready(function() {
                         //console.log("DETAILS RECETTES");
                         //console.log(json_details_recettes);
                         for(recette_contexte of json_details_recettes){
-                            console.log("UNE RECETTE");
-                            console.log(recette_contexte);
+                            //console.log("UNE RECETTE");
+                            //console.log(recette_contexte);
 
                             /* Si la recette est notée comme préparée à l'avance, vérifier que la session de prepa est comprise dans les recettes demandées
                             Si la recette n'est pas notée comme préparée à l'avance, vérifier que les recettes préparées sur site sont demandées
