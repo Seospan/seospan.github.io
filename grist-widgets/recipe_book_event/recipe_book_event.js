@@ -156,7 +156,7 @@ $( document ).ready(function() {
         });
         console.log("ids of sessions to include :");
         console.log(sessions_to_include);
-        //console.log('take on site recipe :'$(':checkbox:checked')checkbox_on_site);
+        console.log('take on site recipes :'+$('#no_prepa_recipes').is(":checked"));
         
         document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                     document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
@@ -266,7 +266,7 @@ $( document ).ready(function() {
                     document.getElementById('checkboxes_sessions').innerHTML = checkboxes_sessions_html;
                     
                     //Add a checkbox for taking recipes with no prepa session (==recipes done on site)
-                    document.getElementById('checkbox_on_site').innerHTML = '<div><input type="checkbox" class="no_prepa_recipes" id="np_prepa_recipes" name="no_prepa_recipes" value="np_prepa_recipes" /> <label for="no_prepa_recipes"> Recettes préparées sur site </label>';
+                    document.getElementById('checkbox_on_site').innerHTML = '<div><input type="checkbox" class="no_prepa_recipes" id="no_prepa_recipes" name="no_prepa_recipes" value="no_prepa_recipes" /> <label for="no_prepa_recipes"> Recettes préparées sur site </label>';
         
                     console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
                 } else {
