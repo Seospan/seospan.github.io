@@ -263,7 +263,9 @@ $( document ).ready(function() {
                         checkboxes_sessions_html += '<div><input type="checkbox" class="sessions_choice" id="'+session.id+'" name="sessions_choice" value="'+session.id+'" /> <label for="'+session.id+'">'+session.nom+'</label>';
                     }
                     document.getElementById('checkboxes_sessions').innerHTML = checkboxes_sessions_html;
-        
+                    
+                    //Add a checkbox for taking recipes with no prepa session (==recipes done on site)
+                    document.getElementById('checkbox_on_site').innerHTML = '<div><input type="checkbox" class="no_prepa_recipes" id="np_prepa_recipes" name="no_prepa_recipes" value="np_prepa_recipes" /> <label for="no_prepa_recipes"> Recettes préparées sur site </label>';
         
                     console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
                 } else {
