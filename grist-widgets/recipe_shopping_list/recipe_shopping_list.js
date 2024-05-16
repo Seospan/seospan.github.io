@@ -34,6 +34,8 @@ Takes as parameter an array :
 ]
  */
 function calculate_shopping_list(details_ingredients_evenement){
+
+    console.log("Entering calculate_shopping_list");
     var ingredients_a_acheter = {}
 
     for(repas in details_ingredients_evenement){
