@@ -36,11 +36,14 @@ Takes as parameter an array :
 function calculate_shopping_list(details_ingredients_evenement){
 
     console.log("Entering calculate_shopping_list");
-    var ingredients_a_acheter = {"a" : "l"}
+    var ingredients_a_acheter = {}
 
     for(repas in details_ingredients_evenement){
+        console.log("Entering repas");
         for(recette in repas){
+            console.log("Entering recette");
             for(ingredient_from_recette in repas.ingredients){
+                console.log("Entering ingredient");
                 nom_ing = ingredient_from_recette.nom;
                 id_ing = ingredient_from_recette.id;
                 qte_totale = ingredient_from_recette.qte_ing_totale;
@@ -53,6 +56,7 @@ function calculate_shopping_list(details_ingredients_evenement){
                 else{
                     rayon = "Sans rayon";
                 }
+                console.log("Rayon :"+rayon);
 
                 //If rayon does not exist, create it
                 if( !(rayon in ingredients_a_acheter)){
