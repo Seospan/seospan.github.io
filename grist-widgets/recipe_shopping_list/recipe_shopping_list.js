@@ -188,8 +188,10 @@ ready(function(){
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
 
-                var shopping_list = calculate_shopping_list(mapped.details_ingredients)
+                var shopping_list = calculate_shopping_list(mapped.details_ingredients);
 
+                console.log("SHOPPING LIST");
+                console.log(shopping_list);
                 // -------------------------------------
                 //var shopping_list = mapped.shopping_list;
                 // -------------------------------------
