@@ -84,7 +84,10 @@ function calculate_shopping_list(details_ingredients_evenement){
     return ingredients_a_acheter;
 }
 
-function generate_shopping_list_HTML(shopping_list){
+function generate_shopping_list_HTML(mapped_ingredients){
+
+    shopping_list = calculate_shopping_list(details_ingredients_evenement);
+
     console.log("SHOPPING LIST");
 
     var html_shopping_list = "";
@@ -191,15 +194,15 @@ ready(function(){
                 document.getElementById('estim_nb_public').innerHTML = mapped.taille_public;
 
 
-                var shopping_list = calculate_shopping_list(mapped.details_ingredients);
+                //var shopping_list = calculate_shopping_list();
 
-                console.log("INGREDIENTS LIST");
-                console.log(mapped.details_ingredients);
+                //console.log("INGREDIENTS LIST");
+                //console.log(mapped.details_ingredients);
                 // -------------------------------------
                 //var shopping_list = mapped.shopping_list;
                 // -------------------------------------
                 
-                document.getElementById("generate_shopping_list").addEventListener("click", () => generate_shopping_list_HTML(shopping_list));
+                document.getElementById("generate_shopping_list").addEventListener("click", () => generate_shopping_list_HTML(mapped.details_ingredients));
                 
     
                 console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
