@@ -85,7 +85,7 @@ function generate_shopping_list_HTML(shopping_list){
     console.log("SHOPPING LIST");
 
     var html_shopping_list = "";
-    shopping_list = JSON.parse(shopping_list);
+    //shopping_list = JSON.parse(shopping_list);
     console.log(typeof(shopping_list));
     console.log(shopping_list);
 
