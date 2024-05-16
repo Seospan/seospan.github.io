@@ -195,8 +195,7 @@ $( document ).ready(function() {
                                 compteur_sommaire++;
                                 html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
                             }else {
-                                sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "[Non inclus dans ce livret]<br />";
-                                compteur_sommaire++;
+                                sommaire_HTML += "<em>" + repas.nom +" - " + recette_contexte.details_recette.Nom + " [Non inclus dans ce livret] </em><br />";
                                 console.log("NOT including "+recette_contexte.details_recette.Nom);
                             }
                             
