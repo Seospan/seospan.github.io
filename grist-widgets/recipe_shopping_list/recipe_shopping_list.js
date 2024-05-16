@@ -42,7 +42,7 @@ function calculate_shopping_list(details_ingredients_evenement){
         console.log("Entering repas");
         for(recette in repas){
             console.log("Entering recette");
-            console.log(repas);
+            console.log(recette);
             for(ingredient_from_recette in recette.ingredients){
                 console.log("Entering ingredient");
                 nom_ing = ingredient_from_recette.nom;
