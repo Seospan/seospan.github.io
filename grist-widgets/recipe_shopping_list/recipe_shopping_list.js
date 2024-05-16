@@ -35,6 +35,8 @@ Takes as parameter an array :
  */
 function calculate_shopping_list(details_ingredients_evenement){
 
+    details_ingredients_evenement = filter_by_checkboxes(details_ingredients_evenement)
+
     var ingredients_a_acheter = {}
 
     console.log("details");
