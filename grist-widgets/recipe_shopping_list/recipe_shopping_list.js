@@ -41,11 +41,11 @@ function calculate_shopping_list(details_ingredients_evenement){
 
     for(repas of details_ingredients_evenement){
         console.log("Entering repas");
-        console.log(details_ingredients_evenement[repas])
-        for(recette of details_ingredients_evenement[repas]){
+        console.log(repas)
+        for(recette of repas){
             console.log("Entering recette");
             console.log(recette);
-            for(ingredient_from_recette of details_ingredients_evenement[repas][recette].ingredients){
+            for(ingredient_from_recette of recette.ingredients){
                 console.log("Entering ingredient");
                 nom_ing = ingredient_from_recette.nom;
                 id_ing = ingredient_from_recette.id;
@@ -92,6 +92,8 @@ function calculate_shopping_list(details_ingredients_evenement){
 }
 
 function generate_shopping_list_HTML(mapped_ingredients){
+
+    var mapped_ingredients = JSON.parse(mapped_ingredients);
 
     console.log("received ingredients in generate_html :")
     console.log(mapped_ingredients)
