@@ -185,8 +185,8 @@ $( document ).ready(function() {
                             console.log("id / sessions to include / test");
                             console.log(recette_contexte.id_session_cuisine);
                             console.log(sessions_to_include);
-                            console.log(sessions_to_include.includes(recette_contexte.id_session_cuisine));
-                            if((recette_contexte.prepare_avant && sessions_to_include.includes(recette_contexte.id_session_cuisine))
+                            console.log(sessions_to_include.includes(recette_contexte.id_session_cuisine.toString()));
+                            if((recette_contexte.prepare_avant && sessions_to_include.includes(recette_contexte.id_session_cuisine.toString()))
                                 || (!recette_contexte.prepare_avant && include_on_site_recipes)
                             )
                             {
