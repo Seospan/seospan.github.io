@@ -154,9 +154,11 @@ $( document ).ready(function() {
         $('#checkboxes_sessions :checkbox:checked').each(function(i){
           sessions_to_include[i] = $(this).val();
         });
+        on_site_recipes = $('#no_prepa_recipes').is(":checked");
+
         console.log("ids of sessions to include :");
         console.log(sessions_to_include);
-        console.log('take on site recipes :'+$('#no_prepa_recipes').is(":checked"));
+        console.log('take on site recipes :'+on_site_recipes);
         
         document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                     document.getElementById('dates_evenement').innerHTML = "Du " + mapped.date_debut.toLocaleDateString("fr-FR",date_options) + " au " + mapped.date_fin.toLocaleDateString("fr-FR",date_options) ;
