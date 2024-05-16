@@ -36,10 +36,12 @@ Takes as parameter an array :
 function calculate_shopping_list(details_ingredients_evenement){
 
     console.log("Entering calculate_shopping_list");
+    console.log(details_ingredients_evenement)
     var ingredients_a_acheter = {}
 
     for(repas in details_ingredients_evenement){
         console.log("Entering repas");
+        console.log(repas)
         for(recette in details_ingredients_evenement[repas]){
             console.log("Entering recette");
             console.log(details_ingredients_evenement[repas][recette]);
