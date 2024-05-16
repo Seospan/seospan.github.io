@@ -54,7 +54,7 @@ function calculate_shopping_list(details_ingredients_evenement){
 
                 //Define rayon or generic label if no rayon
                 if(ingredient_from_recette.rayon){
-                    rayon = ingredient_from_recette['Ingredient']['Rayon']['nom_du_rayon'];
+                    rayon = ingredient_from_recette.rayon;
                 }
                 else{
                     rayon = "Sans rayon";
