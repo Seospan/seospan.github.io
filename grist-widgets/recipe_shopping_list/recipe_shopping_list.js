@@ -85,7 +85,8 @@ function calculate_shopping_list(details_ingredients_evenement){
     return ingredients_a_acheter;
 }
 
-function filter_by_checkboxes(){
+function filter_by_checkboxes(details_ingredients_evenement){
+
     sessions_to_include = [];
     $('#checkboxes_sessions :checkbox:checked').each(function(i){
       sessions_to_include[i] = $(this).val();
@@ -95,6 +96,21 @@ function filter_by_checkboxes(){
     console.log("ids of sessions to include :");
     console.log(sessions_to_include);
     console.log('take on site recipes :'+include_on_site_recipes);
+
+    for(repas of details_ingredients_evenement){
+        for(recette of repas){
+            if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
+                || (!recette.prepare_avant && include_on_site_recipes)
+            )
+            {
+                console.log("including "+recette_contexte.details_recette.Nom);
+            }else {
+                console.log("NOT including "+recette_contexte.details_recette.Nom);
+                index = repas.indexOf(recette);
+                repas = repas.splice(index,1);
+            }
+        }
+    }
   
 }
 
