@@ -154,7 +154,7 @@ $( document ).ready(function() {
         $('#checkboxes_sessions :checkbox:checked').each(function(i){
           sessions_to_include[i] = $(this).val();
         });
-        on_site_recipes = $('#no_prepa_recipes').is(":checked");
+        include_on_site_recipes = $('#no_prepa_recipes').is(":checked");
 
         console.log("ids of sessions to include :");
         console.log(sessions_to_include);
@@ -173,14 +173,23 @@ $( document ).ready(function() {
                         //console.log("RECETTE FROM REPAS");
                         //console.log(repas);
                         var json_details_recettes = JSON.parse(repas.details_recettes);
-                        console.log("DETAILS RECETTES");
-                        console.log(json_details_recettes);
+                        //console.log("DETAILS RECETTES");
+                        //console.log(json_details_recettes);
                         for(recette_contexte of json_details_recettes){
                             //console.log("UNE RECETTE");
                             //console.log(recette_contexte);
-                            sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
-                            compteur_sommaire++;
-                            html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
+                            if(recette_contexte.prepare_avant && sessions_to_include.includes(recette_contexte.id_session_cuisine)
+                                || !recette_contexte.prepare_avant && include_on_site_recipes
+                            )
+                            ){
+                                console.log("including "+recette_contexte.details_recette.Nom);
+                                sommaire_HTML += compteur_sommaire + " - " + repas.nom +" - " + recette_contexte.details_recette.Nom + "<br />";
+                                compteur_sommaire++;
+                                html_repas += recipeToHTML(mapped.nom_event, recette_contexte, repas);
+                            }else{
+                                console.log("NOT including "+recette_contexte.details_recette.Nom);
+                            }
+                            
                         }
                         //recipeToHTML(mapped.nom_event, repas.nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie)
                         //recipeToHTML(nom_evenement, nom_session_cuisine, recette, nb_portions, multip_recette, recipe_ingredients, repas_lie){
