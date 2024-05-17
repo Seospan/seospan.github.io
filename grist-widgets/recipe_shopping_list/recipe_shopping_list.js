@@ -110,7 +110,7 @@ $( document ).ready(function() {
                     console.log("indexRepas :"+indexRepas)
                     console.log("")
                     console.log(details_ingredients_evenement[indexRepas]);
-                    details_ingredients_evenement[indexRepas] = repas.splice(indexRecette,1);
+                    details_ingredients_evenement[indexRepas].splice(indexRecette,1);
                     console.log(details_ingredients_evenement[indexRepas]);
                 }
             }
