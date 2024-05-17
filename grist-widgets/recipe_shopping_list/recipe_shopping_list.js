@@ -103,7 +103,7 @@ $( document ).ready(function() {
 
         for(const [indexRepas, repas] of details_ingredients_evenement.entries()){
 
-            repas.filter((recette, indexRecette, repasArray) => {
+            details_ingredients_evenement[indexRepas] = repas.filter((recette, indexRecette, repasArray) => {
                 if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
                     || (!recette.prepare_avant && include_on_site_recipes)
                 )
