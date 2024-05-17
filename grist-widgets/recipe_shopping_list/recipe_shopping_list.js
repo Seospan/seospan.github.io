@@ -98,7 +98,7 @@ $( document ).ready(function() {
         console.log('take on site recipes :'+include_on_site_recipes);
 
         for(const [i, repas] of details_ingredients_evenement.entries()){
-            for(const [j,recette] of repas){
+            for(const [j,recette] of repas.entries()){
                 if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
                     || (!recette.prepare_avant && include_on_site_recipes)
                 )
