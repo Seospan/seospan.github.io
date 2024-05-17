@@ -102,7 +102,25 @@ $( document ).ready(function() {
 
 
         for(const [indexRepas, repas] of details_ingredients_evenement.entries()){
-            for(const [indexRecette,recette] of repas.entries()){
+
+            repas.filter((recette, indexRecette, repasArray) => {
+                if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
+                    || (!recette.prepare_avant && include_on_site_recipes)
+                )
+                {
+                    console.log("including "+recette.nom);
+                }else {
+                    console.log("NOT including "+recette.nom);
+                    console.log("removing at indexRecette :"+indexRecette);
+                    console.log("indexRepas :"+indexRepas)
+
+                    console.log(details_ingredients_evenement[indexRepas].length);
+                    details_ingredients_evenement[indexRepas].splice(indexRecette,1);
+                    console.log(details_ingredients_evenement[indexRepas].length);
+                }
+            })
+
+            /*for(const [indexRecette,recette] of repas.entries()){
                 if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
                     || (!recette.prepare_avant && include_on_site_recipes)
                 )
@@ -117,7 +135,7 @@ $( document ).ready(function() {
                     details_ingredients_evenement[indexRepas].splice(indexRecette,1);
                     console.log(details_ingredients_evenement[indexRepas].length);
                 }
-            }
+            }*/
         }
         console.log("RESULT");
         console.log(details_ingredients_evenement)
