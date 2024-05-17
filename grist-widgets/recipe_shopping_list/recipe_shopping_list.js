@@ -137,7 +137,7 @@ $( document ).ready(function() {
 
         var mapped_ingredients = JSON.parse(mapped_ingredients_arg);
         console.log("ARGUMENT : ");
-        console.log(mapped_ingredients);
+        console.log(mapped_ingredients[0].length);
 
         shopping_list = calculate_shopping_list(mapped_ingredients, sessions_to_include, include_on_site_recipes);
 
