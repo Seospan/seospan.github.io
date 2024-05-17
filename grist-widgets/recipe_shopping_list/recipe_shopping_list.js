@@ -99,6 +99,8 @@ $( document ).ready(function() {
         //console.log(sessions_to_include);
         //console.log('take on site recipes :'+include_on_site_recipes);
 
+
+
         for(const [indexRepas, repas] of details_ingredients_evenement.entries()){
             for(const [indexRecette,recette] of repas.entries()){
                 if((recette.prepare_avant && sessions_to_include.includes(recette.id_session_cuisine.toString()))
@@ -134,7 +136,7 @@ $( document ).ready(function() {
 
 
         var mapped_ingredients = JSON.parse(mapped_ingredients_arg);
-        consloe.log("ARGUMENT : ");
+        console.log("ARGUMENT : ");
         console.log(mapped_ingredients);
 
         shopping_list = calculate_shopping_list(mapped_ingredients, sessions_to_include, include_on_site_recipes);
