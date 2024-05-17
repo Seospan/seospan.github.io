@@ -109,6 +109,7 @@ $( document ).ready(function() {
                 )
                 {
                     console.log("including "+recette.nom);
+                    return true;
                 }else {
                     console.log("NOT including "+recette.nom);
                     console.log("removing at indexRecette :"+indexRecette);
@@ -118,8 +119,9 @@ $( document ).ready(function() {
 
                     console.log("length repas before");
                     console.log(details_ingredients_evenement[indexRepas].length);
-                    details_ingredients_evenement[indexRepas].splice(indexRecette,1);
+                    //details_ingredients_evenement[indexRepas].splice(indexRecette,1);
                     console.log("length repas after");
+                    return false;
                     console.log(details_ingredients_evenement[indexRepas].length);
                     console.log("array after:");
                     console.log(details_ingredients_evenement)
