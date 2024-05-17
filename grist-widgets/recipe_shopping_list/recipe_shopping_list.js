@@ -109,9 +109,9 @@ $( document ).ready(function() {
                     console.log("removing at indexRecette :"+indexRecette);
                     console.log("indexRepas :"+indexRepas)
                     console.log("")
-                    console.log(details_ingredients_evenement[indexRepas].length());
+                    console.log(details_ingredients_evenement[indexRepas].length);
                     details_ingredients_evenement[indexRepas].splice(indexRecette,1);
-                    console.log(details_ingredients_evenement[indexRepas].length());
+                    console.log(details_ingredients_evenement[indexRepas].length);
                 }
             }
         }
