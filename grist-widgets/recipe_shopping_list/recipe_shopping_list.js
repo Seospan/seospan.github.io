@@ -115,7 +115,8 @@ $( document ).ready(function() {
                 }
             }
         }
-
+        console.log("RESULT");
+        console.log(details_ingredients_evenement)
         return details_ingredients_evenement;
     
     }
