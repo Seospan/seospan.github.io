@@ -92,10 +92,12 @@ $( document ).ready(function() {
     function filter_by_checkboxes(details_ingredients_evenement, sessions_to_include, include_on_site_recipes){
 
         var details_ingredients_evenement = details_ingredients_evenement;
+        console.log("before");
+        console.log(details_ingredients_evenement)
 
-        console.log("ids of sessions to include :");
-        console.log(sessions_to_include);
-        console.log('take on site recipes :'+include_on_site_recipes);
+        //console.log("ids of sessions to include :");
+        //console.log(sessions_to_include);
+        //console.log('take on site recipes :'+include_on_site_recipes);
 
         for(const [indexRepas, repas] of details_ingredients_evenement.entries()){
             for(const [indexRecette,recette] of repas.entries()){
