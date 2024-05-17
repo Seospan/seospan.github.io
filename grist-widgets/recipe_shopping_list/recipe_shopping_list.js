@@ -113,7 +113,7 @@ $( document ).ready(function() {
                     console.log("NOT including "+recette.nom);
                     console.log("removing at indexRecette :"+indexRecette);
                     console.log("indexRepas :"+indexRepas);
-                    console.log("array :");
+                    console.log("array before :");
                     console.log(details_ingredients_evenement)
 
                     console.log("length repas before");
@@ -121,6 +121,8 @@ $( document ).ready(function() {
                     details_ingredients_evenement[indexRepas].splice(indexRecette,1);
                     console.log("length repas after");
                     console.log(details_ingredients_evenement[indexRepas].length);
+                    console.log("array after:");
+                    console.log(details_ingredients_evenement)
                 }
             })
 
