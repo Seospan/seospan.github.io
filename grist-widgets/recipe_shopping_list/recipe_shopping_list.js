@@ -93,7 +93,7 @@ $( document ).ready(function() {
 
         var details_ingredients_evenement = details_ingredients_evenement;
         console.log("before");
-        console.log(details_ingredients_evenement)
+        console.log(details_ingredients_evenement);
 
         //console.log("ids of sessions to include :");
         //console.log(sessions_to_include);
@@ -112,10 +112,14 @@ $( document ).ready(function() {
                 }else {
                     console.log("NOT including "+recette.nom);
                     console.log("removing at indexRecette :"+indexRecette);
-                    console.log("indexRepas :"+indexRepas)
+                    console.log("indexRepas :"+indexRepas);
+                    console.log("array :");
+                    console.log(details_ingredients_evenement)
 
+                    console.log("length repas before");
                     console.log(details_ingredients_evenement[indexRepas].length);
                     details_ingredients_evenement[indexRepas].splice(indexRecette,1);
+                    console.log("length repas after");
                     console.log(details_ingredients_evenement[indexRepas].length);
                 }
             })
