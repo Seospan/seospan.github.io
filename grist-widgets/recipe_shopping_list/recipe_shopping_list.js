@@ -123,7 +123,7 @@ $( document ).ready(function() {
     
     }
 
-    function generate_shopping_list_HTML(mapped_ingredients){
+    function generate_shopping_list_HTML(mapped_ingredients_arg){
 
         //Get filtering specificities
         sessions_to_include = [];
@@ -133,7 +133,9 @@ $( document ).ready(function() {
         include_on_site_recipes = $('#no_prepa_recipes').is(":checked");
 
 
-        var mapped_ingredients = JSON.parse(mapped_ingredients);
+        var mapped_ingredients = JSON.parse(mapped_ingredients_arg);
+        consle.log("ARGUMENT : ");
+        console.log(mapped_ingredients);
 
         shopping_list = calculate_shopping_list(mapped_ingredients, sessions_to_include, include_on_site_recipes);
 
