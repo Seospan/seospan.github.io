@@ -107,7 +107,8 @@ $( document ).ready(function() {
                 }else {
                     console.log("NOT including "+recette.nom);
                     index = j;
-                    console.log("removing at index :"+index);
+                    console.log("removing at index :"+j);
+                    console.log("i :"+i)
                     details_ingredients_evenement[i] = repas.splice(index,1);
                 }
             }
