@@ -176,8 +176,8 @@ $( document ).ready(function() {
                         //console.log("RECETTE FROM REPAS");
                         //console.log(repas);
                         var json_details_recettes = JSON.parse(repas.details_recettes);
-                        console.log("DETAILS RECETTES");
-                        console.log(json_details_recettes);
+                        //console.log("DETAILS RECETTES");
+                        //console.log(json_details_recettes);
 
                         for(recette_contexte of json_details_recettes){
                             //console.log("UNE RECETTE");
@@ -273,8 +273,8 @@ $( document ).ready(function() {
                 const mapped = grist.mapColumnNames(row);
                 // First check if all columns were mapped.
                 if (mapped) {
-                    //console.log("MAPPED");
-                    //console.log(mapped.details_repas);
+                    console.log("MAPPED");
+                    console.log(mapped);
                     //console.log(mappings);
                     //console.log("DATE");
                     //console.log(mapped.date_debut);
