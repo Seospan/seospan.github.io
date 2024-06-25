@@ -135,6 +135,7 @@ $( document ).ready(function() {
             html_ingredients_list += "<td>" + ingredient_in_recipe.Ingredient.Nom + "</td>";
             var ingredient_scaled = (ingredient_in_recipe.qte_par_personne * nb_portions).toFixed(2);
             html_ingredients_list += "<td>" + ingredient_scaled + ingredient_in_recipe.Ingredient.Unite.abbreviation + "</td>";
+            html_ingredients_list += "<td>( " + ingredient_in_recipe.note + " )=</td>";
         }
     
         html_recette += html_ingredients_list;
