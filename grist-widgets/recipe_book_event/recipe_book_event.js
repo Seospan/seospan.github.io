@@ -274,7 +274,7 @@ $( document ).ready(function() {
                 // First check if all columns were mapped.
                 if (mapped) {
                     console.log("MAPPED");
-                    console.log(mapped);
+                    console.log(JSON.parse(mapped.details_repas));
                     //console.log(mappings);
                     //console.log("DATE");
                     //console.log(mapped.date_debut);
