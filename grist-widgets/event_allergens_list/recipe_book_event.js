@@ -136,6 +136,21 @@ $( document ).ready(function() {
         //console.log("GOGOGO");
         grist.ready({columns: [
                 {
+                    name:'nom_event',
+                    title:'Nom de l\'événement',
+                    optional: false,
+                },
+                {
+                    name:'date_debut',
+                    title:'Date de début',
+                    optional: false,
+                },
+                {
+                    name:'date_fin',
+                    title:'Date de fin',
+                    optional: false,
+                },
+                {
                     name:'details_allergenes_par_recette',
                     title:'Détails des allergenes par recette',
                     optional: false,
