@@ -30,6 +30,7 @@ $( document ).ready(function() {
                     for(recette of details_recettes){
 
                         var json_details_recettes = JSON.parse(recette);
+                        console.log("POUET");
                         console.log(recette);
                         
 
