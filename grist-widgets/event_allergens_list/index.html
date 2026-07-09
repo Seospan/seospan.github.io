@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'>
+    <title>Recipe</title>
+    <link rel="stylesheet" href="recipe_book_event.css" />
+    <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="recipe_book_event.js"></script>
+  </head>
+  <body>
+    <input type="button" class="no-printme" id="download_button" value="Télécharger la fiche allergenes" onclick="javascript:window.print()">
+    <input type="button" class="no-printme" id="generate_recipe_book" value="Générer la fiche allergenes">
+    <div id="checkboxes_sessions"></div>
+    <div id="checkbox_on_site"></div>
+
+    <div class="printme" id="livret_recette">
+      <div style="text-align:center;">
+        <h1 id="nom_evenement" style="font-size:70px; color:#860E4E"></h1>
+        <h3 id="dates_evenement" style="font-size:30px"></h3>
+        <h3 style="font-size:25px">Estimation : <span id="estim_nb_public"></span> personnes</h3>
+        <div id="sommaire" style="font-size:20px; line-height:150%">
+        </div>
+        <div style="page-break-after: always;"></div>
+      </div> 
+
+      <div id="all_recettes"></div>
+    </div>
+
+    </body>
+</html>

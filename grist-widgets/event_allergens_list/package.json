@@ -1,0 +1,16 @@
+{
+  "name": "@seospan/grist-widgets/recipe_book_event",
+  "description": "Widget for editing a recipe book for an event",
+  "homePage": "https://github.com/seospan",
+  "version": "0.0.1",
+  "grist": [
+    {
+      "name": "Recipe book for an event",
+      "url": "https://seospan.github.io/grist-widget/recipe_book_event/index.html",
+      "widgetId": "@gristlabs/widget-recipe_toprint#recipe_book",
+      "published": true,
+      "accessLevel": "read table",
+      "renderAfterReady": true
+    }
+  ]
+}
