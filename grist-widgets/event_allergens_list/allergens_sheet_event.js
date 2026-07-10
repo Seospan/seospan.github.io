@@ -76,14 +76,13 @@ $( document ).ready(function() {
                 // First check if all columns were mapped.
                 if (mapped) {
                     console.log("MAPPED");
-                    console.log(JSON.parse(mapped.details_repas));
+                    //console.log(JSON.parse(mapped.details_repas));
                     //console.log(mappings);
                     //console.log("DATE");
                     //console.log(mapped.date_debut);
     
                     //document.getElementById("generate_allergens_sheet").addEventListener("click", () => generate_recipe_book(mapped));
                
-                    console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
                 } else {
                     // Helper returned a null value. It means that not all
                     // required columns were mapped.
