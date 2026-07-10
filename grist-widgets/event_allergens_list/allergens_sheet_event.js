@@ -81,7 +81,7 @@ $( document ).ready(function() {
                     //console.log("DATE");
                     //console.log(mapped.date_debut);
     
-                    document.getElementById("generate_allergens_sheet").addEventListener("click", () => generate_recipe_book(mapped));
+                    //document.getElementById("generate_allergens_sheet").addEventListener("click", () => generate_recipe_book(mapped));
                
                     console.log(`Using ${mappings.Titre} and ${mappings.Texte} columns`);
                 } else {
