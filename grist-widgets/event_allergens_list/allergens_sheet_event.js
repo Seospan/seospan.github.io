@@ -75,10 +75,10 @@ $( document ).ready(function() {
                 const mapped = grist.mapColumnNames(row);
                 // First check if all columns were mapped.
                 if (mapped) {
-                    console.log("MAPPED");
+                    console.log("MAPPEDPPP");
                     console.log(mapped);
                     console.log(typeof mapped);
-                    
+
                     for(repas of mapped){
                         console.log(repas.nom);
                     }
