@@ -78,7 +78,7 @@ $( document ).ready(function() {
                     console.log("MAPPEDPPP");
                     console.log(mapped);
 
-                    let details_allergenes_par_recette = JSON.parse(mappings.details_allergenes_par_recette);
+                    let details_allergenes_par_recette = mappings.details_allergenes_par_recette;
                     console.log(details_allergenes_par_recette);
 
                     /*for(repas of mapped){
