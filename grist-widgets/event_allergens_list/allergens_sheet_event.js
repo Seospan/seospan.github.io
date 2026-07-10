@@ -81,9 +81,10 @@ $( document ).ready(function() {
                     let details_allergenes_par_recette = mapped.details_allergenes_par_recette;
                     console.log(details_allergenes_par_recette);
 
-                    /*for(repas of mapped){
-                        console.log(repas.nom);
-                    }*/
+                    for(const [key, value] of Object.entries(details_allergenes_par_recette)){
+                        console.log(key);
+                        console.log(value);
+                    }
     
                     //document.getElementById("generate_allergens_sheet").addEventListener("click", () => generate_recipe_book(mapped));
                
