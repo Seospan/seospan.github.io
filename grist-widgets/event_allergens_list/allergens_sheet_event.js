@@ -77,7 +77,8 @@ $( document ).ready(function() {
                 if (mapped) {
                     console.log("MAPPED");
                     console.log(mapped);
-
+                    console.log(typeof mapped);
+                    
                     for(repas of mapped){
                         console.log(repas.nom);
                     }
