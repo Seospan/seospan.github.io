@@ -75,8 +75,10 @@ $( document ).ready(function() {
                 const mapped = grist.mapColumnNames(row);
                 // First check if all columns were mapped.
                 if (mapped) {
-                    console.log("MAPPEDPPP");
+                    console.log("MAPPED ALLERGENS");
                     console.log(mapped);
+
+                    document.getElementById('nom_evenement').innerHTML = mapped.nom_event;
                     html_allergenes = "<div>";
 
                     let details_allergenes_par_recette = mapped.details_allergenes_par_recette;
@@ -88,7 +90,7 @@ $( document ).ready(function() {
                         allergenes_prepa = value.allergenes_prepa;
                         allergenes_service = value.allergenes_service;
                         html_allergenes += "<h4>"+key+"</h4>";
-                        html_allergenes += "<h5>Allergenes à la préparation : </h5>";
+                        html_allergenes += "<b>Allergenes à la préparation : </b>";
                         if(allergenes_prepa.length>0){
                             for(allergene of allergenes_prepa){
                                 html_allergenes += allergene+", ";
@@ -98,7 +100,7 @@ $( document ).ready(function() {
                             html_allergenes += "-<br />";
                         }
 
-                        html_allergenes += "<h5>Allergenes ajoutés au service : </h5>";
+                        html_allergenes += "<b>Allergenes ajoutés au service : </b>";
                         if(allergenes_service.length>0){
                             for(allergene of allergenes_service){
                                 html_allergenes += allergene+", ";
