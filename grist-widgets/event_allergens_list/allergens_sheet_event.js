@@ -77,11 +77,13 @@ $( document ).ready(function() {
                 if (mapped) {
                     console.log("MAPPEDPPP");
                     console.log(mapped);
-                    console.log(typeof mapped);
 
-                    for(repas of mapped){
+                    let details_allergenes_par_recette = JSON.parse(mappings.details_allergenes_par_recette);
+                    console.log(details_allergenes_par_recette);
+
+                    /*for(repas of mapped){
                         console.log(repas.nom);
-                    }
+                    }*/
     
                     //document.getElementById("generate_allergens_sheet").addEventListener("click", () => generate_recipe_book(mapped));
                
