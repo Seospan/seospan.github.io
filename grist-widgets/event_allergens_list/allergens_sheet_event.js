@@ -77,6 +77,7 @@ $( document ).ready(function() {
                 if (mapped) {
                     console.log("MAPPEDPPP");
                     console.log(mapped);
+                    html_allergenes = "<div>";
 
                     let details_allergenes_par_recette = mapped.details_allergenes_par_recette;
                     console.log(details_allergenes_par_recette);
@@ -84,8 +85,31 @@ $( document ).ready(function() {
                     for(const [key, value] of Object.entries(details_allergenes_par_recette)){
                         console.log(key);
                         console.log(value);
+                        allergenes_prepa = value.allergenes_prepa;
+                        allergenes_service = value.allergenes_service;
+                        html_allergenes += "<h4>"+key+"</h4>";
+                        html_allergenes += "<h5>Allergenes à la préparation : </h5>";
+                        if(allergenes_prepa.length>0){
+                            for(allergene of allergenes_prepa){
+                                html_allergenes += allergene+", ";
+                            }
+                            html_allergenes += "<br />";
+                        }else{
+                            html_allergenes += "-<br />";
+                        }
+
+                        html_allergenes += "<h5>Allergenes ajoutés au service : </h5>";
+                        if(allergenes_service.length>0){
+                            for(allergene of allergenes_service){
+                                html_allergenes += allergene+", ";
+                            }
+                            html_allergenes += "<br />";
+                        }else{
+                            html_allergenes += "-<br />";
+                        }
                     }
-    
+                    html_allergenes += "</div>";
+                    document.getElementById("allergenes").innerHTML = html_allergenes;
                     //document.getElementById("generate_allergens_sheet").addEventListener("click", () => generate_recipe_book(mapped));
                
                 } else {
