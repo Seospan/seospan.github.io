@@ -77,17 +77,11 @@ $( document ).ready(function() {
                 if (mapped) {
                     console.log("MAPPEDPPP");
                     console.log(mapped);
-<<<<<<< HEAD
 
                     let details_allergenes_par_recette = JSON.parse(mappings.details_allergenes_par_recette);
                     console.log(details_allergenes_par_recette);
 
                     /*for(repas of mapped){
-=======
-                    console.log(typeof mapped);
-
-                    for(repas of mapped){
->>>>>>> origin/main
                         console.log(repas.nom);
                     }*/
     
